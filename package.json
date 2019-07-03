@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jestgit ",
     "build": "webpack",
     "server": "live-server",
     "dev-start": "nodemon index.js"
