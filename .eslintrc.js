@@ -10,7 +10,7 @@
 // };
 
 module.exports = {
-  extend: 'hackreactor',
+  extend: 'hackreactor', "airbnb",
   rules: {
     // Rules here will override the 'hackreactor' configuration: http://eslint.org/docs/rules/
   }
