@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const path = require('path');
 
 module.exports = {
@@ -14,12 +15,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
+        use: ['babel-loader']
       }
     ]
   },
