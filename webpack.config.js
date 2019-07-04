@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const path = require('path');
 
 module.exports = {
@@ -7,7 +6,7 @@ module.exports = {
   watch: true,
   output: {
     path: path.resolve(__dirname, './client/dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
 
   module: {
@@ -15,12 +14,12 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
-      }
-    ]
+        use: ['babel-loader'],
+      },
+    ],
   },
 
   resolve: {
-    extensions: ['*', '.js', '.jsx']
-  }
+    extensions: ['*', '.js', '.jsx'],
+  },
 };
