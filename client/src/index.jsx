@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.jsx';
+import App from './App';
 
-ReactDOM.render(<p>I'm alive!</p>, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
