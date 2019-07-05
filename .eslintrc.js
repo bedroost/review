@@ -23,5 +23,6 @@ module.exports = {
   ],
   rules: {
     "no-console": "off",
+    "no-shadow": [2, {"builtinGlobals": false, "hoist": "functions", "allow": []}],
   },
 };
