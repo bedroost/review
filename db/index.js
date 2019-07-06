@@ -38,7 +38,8 @@ const listingSchema = new mongoose.Schema({
 // compile schema into a model
 const Listing = mongoose.model('Listing', listingSchema);
 
-// sample instance of model Review
+/* SAMPLE INSTANCE OF MODEL 'LISTING'
+// sample instance of model Listing
 const listing1 = new Listing({
   ratings: {
     overall: 5,
@@ -78,5 +79,6 @@ listing1.save((err) => {
   }
   return console.log('listing was saved');
 });
+*/
 
 module.exports = { db, Listing };
