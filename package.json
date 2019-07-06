@@ -1,13 +1,13 @@
 {
   "name": "review",
   "version": "1.0.0",
-  "description": "",
+  "description": "This microservice will display user reviews and star ratings for a given listing",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "build": "webpack",
-    "start": "live-server --open='./client/dist'",
-    "dev-start": "nodemon ./server/index.js"
+    "dev-start": "nodemon ./server/index.js",
+    "seed": "node db/seed.js"
   },
   "repository": {
     "type": "git",
