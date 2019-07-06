@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const port = 3000;
 const db = require('../db');
+const fakerMaker = require('../db/seed');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());

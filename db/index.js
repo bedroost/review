@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/review', {
-  useCreateIndex: true, // use .createIndex instead of .ensureIndex. Removes deprecation warning
+mongoose.connect('mongodb://localhost:27017/airbnb', {
+  useCreateIndex: true,
   useNewUrlParser: true,
 });
 
@@ -9,50 +9,76 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => console.log('Mongoose is connected'));
 
+// create reference to schema
+// child
 const reviewSchema = new mongoose.Schema({
-  review_id: {
-    type: Number,
-    unique: true,
-  },
-  listing_id: Number,
+  created_at: { type: Date, default: Date.now },
   text: String,
-  created_at: {
-    type: Date,
-    default: Date.now,
-  },
-  user_id: Number,
-  user_name: String,
-  user_avatar_url: String,
+  username: String,
+  avatar: String,
   response_username: String,
-  response_avatar_url: String,
+  response_avatar: String,
   response_text: String,
-  response_created_at: Date,
 });
 
-const Review = mongoose.model('Review', reviewSchema);
+// parent
+const listingSchema = new mongoose.Schema({
+  ratings: {
+    overall: Number,
+    accuracy: Number,
+    communication: Number,
+    cleanliness: Number,
+    location: Number,
+    check_in: Number,
+    value: Number,
+  },
+  reviews: [reviewSchema],
+});
 
-// sample instance of model Review
-const testReview = new Review({
-  review_id: 2,
-  listing_id: 10,
-  text: 'newReview',
-  created_at: '2019-05-18T16:00:00Z',
+// compile schema into a model
+const Listing = mongoose.model('Listing', listingSchema);
 
-  user_id: 1,
-  user_name: 'newUser',
-  user_avatar_url: 'https://www.blurb.com',
-  response_username: 'String',
-  response_avatar_url: 'String',
-  response_text: 'String',
-  response_created_at: '2016-05-18T16:00:00Z',
+/* SAMPLE INSTANCE OF MODEL 'LISTING'
+// sample instance of model Listing
+const listing1 = new Listing({
+  ratings: {
+    overall: 5,
+    accuracy: 5,
+    communication: 5,
+    cleanliness: 5,
+    location: 5,
+    check_in: 5,
+    value: 5,
+  },
+
+  reviews: [
+    {
+      created_at: 'Sat Jan 18 2019 00:08:21 GMT-0700 (PDT)',
+      text: 'review review review review',
+      username: 'Bugs',
+      avatar: 'www.img.com',
+      response_username: 'Porky',
+      response_avatar: 'www.img.com',
+      response_text: 'That\'s all folks',
+    },
+    {
+      created_at: 'Sat Jan 01 2018 00:08:21 GMT-0700 (PDT)',
+      text: 'review review review review',
+      username: 'Daffy',
+      avatar: 'www.img.com',
+      response_username: null,
+      response_avatar: null,
+      response_text: null,
+    }],
 });
 
 // test to save the new model instance
-testReview.save((err) => {
+listing1.save((err) => {
   if (err) {
     return console.error(err);
   }
-  return console.log('testReview saved');
+  return console.log('listing was saved');
 });
+*/
 
-module.exports = db;
+module.exports = { db, Listing };
