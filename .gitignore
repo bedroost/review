@@ -26,7 +26,3 @@ dist/
 
 # Notes
 notes.txt
-
-# Functionality Testing
-spec/demo.js
-spec/demo.test.js
