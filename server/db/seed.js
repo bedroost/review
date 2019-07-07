@@ -4,16 +4,19 @@ const faker = require('faker');
 const db = require('./index');
 
 // helper function to make a new Listing instance
-const listingMaker = (ratings, reviews) => (
-  new db.Listing({ ratings, reviews })
+const listingMaker = (listingid, ratings, reviews) => (
+  new db.Listing({ listingid, ratings, reviews })
 );
 
 for (let i = 0; i < 100; i += 1) {
+  // create listingid
+  const listingid = i + 1;
+
   // use faker to make random values to assign to schema keys:
   // each listing will have same ratings, response_username, response_avatar
   // each listing will have variance in reviews array
   const numReviews = faker.random.number({ min: 5, max: 150 });
-  console.log(`This listing ${i} has ${numReviews} reviews`);
+  console.log(`Listing index ${i} has ${numReviews} reviews`);
   const accuracy = faker.random.number({ min: 1, max: 5 });
   const communication = faker.random.number({ min: 1, max: 5 });
   const cleanliness = faker.random.number({ min: 1, max: 5 });
@@ -48,7 +51,7 @@ for (let i = 0; i < 100; i += 1) {
     const avatar = faker.internet.avatar();
     const response_text = faker.lorem.sentence();
 
-    // random number to determin if this review has text longer than 50 words
+    // random number to determine if this review has text longer than 50 words
     const random_reviewLength = faker.random.number({ min: 0, max: 100 });
 
     // random number to determine if this review has a response
@@ -75,11 +78,11 @@ for (let i = 0; i < 100; i += 1) {
     // add the populated review object into the reviews array
     reviews.push(review);
   }
-  // pass in ratings object and reviews array into new Listing instance
-  const newListing = listingMaker(ratings, reviews);
-  // console.log(newListing);
 
-  // save the newListing to database
+  // pass in ratings object and reviews array into new Listing instance
+  const newListing = listingMaker(listingid, ratings, reviews);
+
+  // save newListing to database
   newListing.save((err) => {
     if (err) {
       console.log(err);
