@@ -42,10 +42,14 @@ for (let i = 0; i < 100; i += 1) {
 
     // generate data for review object
     const created_at = faker.date.past();
-    const text = faker.lorem.paragraph();
+    const textShort = faker.lorem.paragraph();
+    const textLong = faker.lorem.paragraphs();
     const username = faker.name.firstName();
     const avatar = faker.internet.avatar();
     const response_text = faker.lorem.sentence();
+
+    // random number to determin if this review has text longer than 50 words
+    const random_reviewLength = faker.random.number({ min: 0, max: 100 });
 
     // random number to determine if this review has a response
     const random_hasResponse = faker.random.number({ min: 0, max: 100 });
@@ -55,7 +59,7 @@ for (let i = 0; i < 100; i += 1) {
     // if not, the review object will NOT have a response
     if (random_hasResponse % 3 === 0) {
       review.created_at = created_at;
-      review.text = text;
+      review.text = random_reviewLength % 2 === 0 ? textShort : textLong;
       review.username = username;
       review.avatar = avatar;
       review.response_username = response_username;
@@ -63,7 +67,7 @@ for (let i = 0; i < 100; i += 1) {
       review.response_text = response_text;
     } else {
       review.created_at = created_at;
-      review.text = text;
+      review.text = random_reviewLength % 2 === 0 ? textShort : textLong;
       review.username = username;
       review.avatar = avatar;
     }
