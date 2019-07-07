@@ -1,11 +1,11 @@
 import React from 'react';
+import Review from './Review';
 
-const ReviewList = () => (
-  <div className="sampleClass">
-    <p>review1</p>
-    <p>review2</p>
-    <p>review3</p>
+const ReviewList = (props) => (
+  <div>
+    {props.reviews.map((review) => {
+      return <Review review={review.text}/>
+    })}
   </div>
 );
-
 export default ReviewList;
