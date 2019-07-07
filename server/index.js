@@ -12,10 +12,6 @@ app.use(bodyParser.json());
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/api/:listingid/reviews', (req, res) => {
-  // console.log(req);
-  // input request
-  // output is status 200 and getting the reviews from one listing
-  // req.params.listingid
   res.send(`Hello from port ${port}`);
 });
 
