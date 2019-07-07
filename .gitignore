@@ -26,3 +26,6 @@ dist/
 
 # Notes
 notes.txt
+
+# Settings
+.vscode

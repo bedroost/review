@@ -5,14 +5,17 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const port = 3000;
-const db = require('../db');
+const db = require('./db');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use('/static', express.static(path.join(__dirname, '../client/dist')));
+app.use('/', express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/api/listing/', (req, res) => {
+app.get('/api/:listingid/reviews', (req, res) => {
   // console.log(req);
+  // input request
+  // output is status 200 and getting the reviews from one listing
+  // req.params.listingid
   res.send(`Hello from port ${port}`);
 });
 
