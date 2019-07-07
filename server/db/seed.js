@@ -4,13 +4,13 @@ const faker = require('faker');
 const db = require('./index');
 
 // helper function to make a new Listing instance
-const listingMaker = (listingid, ratings, reviews) => (
-  new db.Listing({ listingid, ratings, reviews })
+const listingMaker = (listing_id, ratings, reviews) => (
+  new db.Listing({ listing_id, ratings, reviews })
 );
 
 for (let i = 0; i < 100; i += 1) {
   // create listingid
-  const listingid = i + 1;
+  const listing_id = i + 1;
 
   // use faker to make random values to assign to schema keys:
   // each listing will have same ratings, response_username, response_avatar
@@ -80,7 +80,7 @@ for (let i = 0; i < 100; i += 1) {
   }
 
   // pass in ratings object and reviews array into new Listing instance
-  const newListing = listingMaker(listingid, ratings, reviews);
+  const newListing = listingMaker(listing_id, ratings, reviews);
 
   // save newListing to database
   newListing.save((err) => {
