@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import { shallow, mount, render } from 'enzyme';
 import React from 'react';
-import ReviewList from '../client/src/ReviewList';
+import ReviewList from '../src/ReviewList';
 
 describe('<ReviewList /> rendering', () => {
   it('should render three <p>', () => {

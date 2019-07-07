@@ -1,4 +1,4 @@
 module.exports = {
   verbose: true,
-  setupFiles: ['<rootDir>/spec/setupTests.js'],
+  setupFiles: ['<rootDir>/enzyme.config.js'],
 };
