@@ -8,6 +8,12 @@ const listingMaker = (listingid, ratings, reviews) => (
   new db.Listing({ listingid, ratings, reviews })
 );
 
+// helper function to sort reviews array by created_at, most recent first, before saving to document
+// alternative was to use mongoose/mongo operations: update, $push, $each
+const sortByCreated_At = arr => (
+  arr.sort((a, b) => b.created_at - a.created_at)
+);
+
 for (let i = 0; i < 100; i += 1) {
   // create listingid
   const listingid = i + 1;
@@ -78,6 +84,9 @@ for (let i = 0; i < 100; i += 1) {
     // add the populated review object into the reviews array
     reviews.push(review);
   }
+
+  // sort reviews array by created_at, most recent first
+  sortByCreated_At(reviews);
 
   // pass in ratings object and reviews array into new Listing instance
   const newListing = listingMaker(listingid, ratings, reviews);
