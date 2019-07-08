@@ -25,6 +25,5 @@ module.exports = {
     "no-console": "off",
     "no-shadow": [2, {"builtinGlobals": false, "hoist": "functions", "allow": []}],
     "react/prop-types": [0],
-    "react/destructuring-assignment": ['never'],
   },
 };

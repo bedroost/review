@@ -1,0 +1,48 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* REVIEW */
+.individual-review {
+  max-width: 594px;
+  color: #484848;
+}
+
+.profile {
+  display: flex;
+  justify-content: left;
+}
+
+.img-circle {
+  border-radius: 50%;
+  max-width: 48px;
+  max-height: 48px;
+}
+
+.username-date {
+  margin-left: 16px;
+  padding-bottom: 5px;
+}
+
+.review-username {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.review-created_at {
+  font-size: 14px;
+}
+
+.text-container {
+  margin-top: 16px;
+}
+
+.review-text {
+  font-size: 16px;
+}
+
+.review-border-bottom {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border: 0.5px solid #EBEBEB;
+}
