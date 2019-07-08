@@ -1,9 +1,11 @@
 import React from 'react';
+import moment from 'moment';
 
 const Review = (props) => {
 
   // js to convert created_at to Month-Year
-  console.log(props.created_at);
+  const timestamp = props.created_at
+  const formattedDate = moment(timestamp).format('MMMM YYYY');
 
   return (
     <div className="individual-review">
@@ -16,7 +18,7 @@ const Review = (props) => {
         <div className="username-date">
           <div className="review-username">{props.username}</div>
           <div className="review-created_at">
-            <span>{props.created_at}</span>
+            <span>{formattedDate}</span>
           </div>
         </div>
       </div>
