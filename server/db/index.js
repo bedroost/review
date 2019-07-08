@@ -23,7 +23,7 @@ const reviewSchema = new mongoose.Schema({
 
 // parent
 const listingSchema = new mongoose.Schema({
-  listing_id: Number,
+  listingid: Number,
   ratings: {
     overall: Number,
     accuracy: Number,

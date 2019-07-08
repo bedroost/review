@@ -9,12 +9,13 @@ const db = require('./db/index');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use('/static', express.static(path.join(__dirname, '../client/dist')));
+app.use('/rooms', express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/api/:listingid/reviews', (req, res) => {
-  // sample id = '5d2129c87e30c5c054ee06f7';
-  const id = req.params.listingid;
-  db.Listing.findById(id, (err, listing) => {
+  console.log('req.params: ', req.params);
+  console.log('req.params.listingid', req.params.listingid);
+
+  db.Listing.find({ listingid: req.params.listingid }, (err, listing) => {
     if (err) {
       console.log(err);
     } else {
