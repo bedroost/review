@@ -39,7 +39,7 @@ class App extends React.Component {
         <h1 className="App-header">
           <Add />
         </h1>
-        <List reviews={this.state.reviews} />
+        <ReviewList reviews={this.state.reviews} />
       </div>
     );
   }

@@ -11,11 +11,11 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use('/rooms', express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/api/:listing_id/reviews', (req, res) => {
+app.get('/api/:listingid/reviews', (req, res) => {
   console.log('req.params: ', req.params);
-  console.log('req.params.listing_id', req.params.listing_id);
+  console.log('req.params.listingid', req.params.listingid);
 
-  db.Listing.find({ listing_id: req.params.listing_id }, (err, listing) => {
+  db.Listing.find({ listingid: req.params.listingid }, (err, listing) => {
     if (err) {
       console.log(err);
     } else {
