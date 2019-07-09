@@ -3,9 +3,47 @@ body {
   letter-spacing: 0.0469em;
 }
 
+.details {
+  max-width: 650px;
+}
+
+/* RATINGS */
+.ratings-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: #484848;
+}
+
+#right {
+  padding-left: 24px;
+}
+
+.well {
+  width: 50%;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.category-stars {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.stars {
+  color: #008489;
+}
+
+/* REVIEW LIST */
+.reviewList-container {
+  margin-top: 16px;
+  width: 100%;
+}
+
 /* REVIEW */
 .review-container {
-  max-width: 594px;
+  max-width: 100%;
   color: #484848;
 }
 
