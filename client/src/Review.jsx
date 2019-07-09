@@ -7,6 +7,7 @@ class Review extends React.Component {
     super(props);
     this.state = {
       response: this.props.responseUsername,
+      isLongerThan50: this.props.text.split(' ').length > 50
     };
   }
 
@@ -14,6 +15,25 @@ class Review extends React.Component {
     // js to convert created_at to Month-Year
     const timestamp = this.props.created_at;
     const formattedDate = moment(timestamp).format('MMMM YYYY');
+
+    // conditional rendering to hide second half of long review
+    const splitText = this.props.text.split(' ');
+    const first50 = splitText.slice(0, 50).join(' ');
+    const post50 = splitText.slice(51).join(' ');
+    let reviewText;
+
+    if (this.state.isLongerThan50) {
+      reviewText = (
+        <div>
+          <div>
+            {`first 50 ${first50}...`}
+            <button type="button" className="read-more-button">Read more</button>
+          </div>
+        </div>
+      );
+    } else {
+      reviewText = `first 50: ${first50}`;
+    }
 
     return (
       <div className="review-container">
@@ -34,7 +54,12 @@ class Review extends React.Component {
         </div>
 
         <div className="text-container">
-          <div className="review-text">{this.props.text}</div>
+          <div className="review-text">
+            {/*{
+              `first 50: ${first50}`
+            }*/}
+            {reviewText}
+          </div>
         </div>
 
         <div>
