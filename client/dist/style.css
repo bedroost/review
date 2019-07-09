@@ -1,10 +1,41 @@
+#reviews-section {
+  max-width: 650px;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.0469em;
 }
 
+.summary {
+  margin-bottom: 12px;
+  color: #484848;
+}
+
+.summary-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#total-no-reviews {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.25em;
+  color: #484848;
+}
+
 .details {
-  max-width: 650px;
+  max-width: 100%;
+}
+
+.summary-border-bottom {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.test {
+  border: 1px solid #EBEBEB;
 }
 
 /* RATINGS */
