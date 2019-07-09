@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import Response from './Response';
 
 class Review extends React.Component {
   constructor(props) {
@@ -13,24 +14,6 @@ class Review extends React.Component {
     // js to convert created_at to Month-Year
     const timestamp = this.props.created_at;
     const formattedDate = moment(timestamp).format('MMMM YYYY');
-
-    // condition to render a response for a review
-    const hasResponse = this.state.response;
-    let response;
-    if (hasResponse) {
-      response = (
-        <div className="response-container">
-          <div>
-            <img className="img-circle" src={`${this.props.responseAvatar}`} alt={`${this.props.responseUsername} User Profile`} />
-          </div>
-          <div>{`Response from ${this.props.responseUsername}`}</div>
-          <div>{this.props.responseText}</div>
-          <div>Placeholder: response created_at</div>
-        </div>
-      );
-    } else {
-      response = null;
-    }
 
     return (
       <div className="individual-review">
@@ -54,7 +37,16 @@ class Review extends React.Component {
           <div className="review-text">{this.props.text}</div>
         </div>
 
-        <div>{response}</div>
+        <div>
+          {
+            this.state.response && (
+              <Response responseAvatar={this.props.responseAvatar}
+                responseUsername={this.props.responseUsername}
+                responseText={this.props.responseText}
+              />
+            )
+          }
+        </div>
 
         <div className="review-border-bottom" />
 
