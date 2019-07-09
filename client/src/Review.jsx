@@ -7,8 +7,17 @@ class Review extends React.Component {
     super(props);
     this.state = {
       response: this.props.responseUsername,
-      isLongerThan50: this.props.text.split(' ').length > 50
+      isLongerThan50: this.props.text.split(' ').length > 50,
+      reviewText: null,
     };
+    this.handleClickReadMore = this.handleClickReadMore.bind(this);
+  }
+
+  handleClickReadMore() {
+    console.log('clicked');
+    this.setState({
+      reviewText: this.props.text,
+    });
   }
 
   render() {
@@ -19,20 +28,19 @@ class Review extends React.Component {
     // conditional rendering to hide second half of long review
     const splitText = this.props.text.split(' ');
     const first50 = splitText.slice(0, 50).join(' ');
-    const post50 = splitText.slice(51).join(' ');
     let reviewText;
 
     if (this.state.isLongerThan50) {
       reviewText = (
         <div>
           <div>
-            {`first 50 ${first50}...`}
-            <button type="button" className="read-more-button">Read more</button>
+            {`${first50}...`}
+            <button type="button" className="read-more-button" onClick={() => this.handleClickReadMore()}>Read more</button>
           </div>
         </div>
       );
     } else {
-      reviewText = `first 50: ${first50}`;
+      reviewText = first50;
     }
 
     return (
@@ -55,10 +63,10 @@ class Review extends React.Component {
 
         <div className="text-container">
           <div className="review-text">
-            {/*{
+            {/* {
               `first 50: ${first50}`
-            }*/}
-            {reviewText}
+            } */}
+            {this.state.reviewText || reviewText}
           </div>
         </div>
 
