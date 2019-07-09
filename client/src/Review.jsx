@@ -1,9 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 
-// goal: display response component if response exists in the data
-// make Review stateful. if response state exists, then render part of that object (conditional rendering)
-
 class Review extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +11,7 @@ class Review extends React.Component {
 
   render() {
     // js to convert created_at to Month-Year
-    const timestamp = this.props.created_at
+    const timestamp = this.props.created_at;
     const formattedDate = moment(timestamp).format('MMMM YYYY');
 
     // condition to render a response for a review
@@ -23,10 +20,12 @@ class Review extends React.Component {
     if (hasResponse) {
       response = (
         <div className="response-container">
-          <img className="img-circle" src={`${this.props.responseAvatar}`} alt={`${this.props.responseUsername} User Profile`} />
-          <div>{this.props.responseUsername}</div>
+          <div>
+            <img className="img-circle" src={`${this.props.responseAvatar}`} alt={`${this.props.responseUsername} User Profile`} />
+          </div>
+          <div>{`Response from ${this.props.responseUsername}`}</div>
           <div>{this.props.responseText}</div>
-          <div>Reponse created_at placeholder</div>
+          <div>Placeholder: response created_at</div>
         </div>
       );
     } else {
@@ -37,15 +36,18 @@ class Review extends React.Component {
       <div className="individual-review">
 
         <div className="profile">
+
           <div>
             <img className="img-circle" src={this.props.avatar} alt={`${this.props.username} User Profile`} />
           </div>
+
           <div className="username-date">
             <div className="review-username">{this.props.username}</div>
             <div className="review-created_at">
               <span>{formattedDate}</span>
             </div>
           </div>
+
         </div>
 
         <div className="text-container">
@@ -57,7 +59,7 @@ class Review extends React.Component {
         <div className="review-border-bottom" />
 
       </div>
-    )
+    );
   }
 }
 

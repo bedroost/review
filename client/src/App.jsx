@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import Add from './Add';
 import ReviewList from './ReviewList';
 
 class App extends React.Component {
