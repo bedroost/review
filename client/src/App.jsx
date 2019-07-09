@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import Add from './Add';
 import ReviewList from './ReviewList';
 
 class App extends React.Component {
@@ -23,7 +22,6 @@ class App extends React.Component {
       .then((res) => {
         console.log('axios response:', res);
         console.log('res.data[0]', res.data[0]);
-        console.log('res.data[0].ratings', res.data[0].ratings);
         this.setState({
           reviews: res.data[0].reviews,
         });
@@ -36,9 +34,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1 className="App-header">
-          <Add />
-        </h1>
+        <h1 className="App-header">Reviews</h1>
         <ReviewList reviews={this.state.reviews} />
       </div>
     );

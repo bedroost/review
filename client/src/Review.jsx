@@ -1,36 +1,59 @@
 import React from 'react';
 import moment from 'moment';
+import Response from './Response';
 
-const Review = (props) => {
+class Review extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      response: this.props.responseUsername,
+    };
+  }
 
-  // js to convert created_at to Month-Year
-  const timestamp = props.created_at
-  const formattedDate = moment(timestamp).format('MMMM YYYY');
+  render() {
+    // js to convert created_at to Month-Year
+    const timestamp = this.props.created_at;
+    const formattedDate = moment(timestamp).format('MMMM YYYY');
 
-  return (
-    <div className="individual-review">
+    return (
+      <div className="individual-review">
 
-      <div className="profile">
-        <div>
-          <img className="img-circle" src={props.avatar} alt={`${props.username} User Profile`} />
-        </div>
+        <div className="profile">
 
-        <div className="username-date">
-          <div className="review-username">{props.username}</div>
-          <div className="review-created_at">
-            <span>{formattedDate}</span>
+          <div>
+            <img className="img-circle" src={this.props.avatar} alt={`${this.props.username} User Profile`} />
           </div>
+
+          <div className="username-date">
+            <div className="review-username">{this.props.username}</div>
+            <div className="review-created_at">
+              <span>{formattedDate}</span>
+            </div>
+          </div>
+
         </div>
+
+        <div className="text-container">
+          <div className="review-text">{this.props.text}</div>
+        </div>
+
+        <div>
+          {
+            this.state.response && (
+              <Response responseAvatar={this.props.responseAvatar}
+                responseUsername={this.props.responseUsername}
+                responseText={this.props.responseText}
+              />
+            )
+          }
+        </div>
+
+        <div className="review-border-bottom" />
+
       </div>
+    );
+  }
+}
 
-      <div className="text-container">
-        <div className="review-text">{props.text}</div>
-      </div>
-
-      <div className="review-border-bottom" />
-
-    </div>
-  )
-};
 
 export default Review;
