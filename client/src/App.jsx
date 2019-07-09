@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ReviewList from './ReviewList';
+import Ratings from './Ratings';
 
 class App extends React.Component {
   constructor(props) {
@@ -35,7 +36,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1 className="App-header">Reviews</h1>
-        <ReviewList reviews={this.state.reviews} />
+
+        <div className="details">
+          <Ratings />
+          <ReviewList reviews={this.state.reviews} />
+        </div>
       </div>
     );
   }

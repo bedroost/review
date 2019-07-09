@@ -2,7 +2,7 @@ import React from 'react';
 import Review from './Review';
 
 const ReviewList = props => (
-  <div>
+  <div className="reviewList-container">
     {props.reviews.map(review => (
       <Review
         username={review.username}
