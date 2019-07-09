@@ -11,6 +11,9 @@ const ReviewList = (props) => {
             avatar={review.avatar}
             created_at={review.created_at}
             text={review.text}
+            responseUsername={review.response_username}
+            responseAvatar={review.response_avatar}
+            responseText={review.response_text}
           />
         );
       })}
