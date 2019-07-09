@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import ReviewList from './ReviewList';
 import Ratings from './Ratings';
+import Total from './Total';
+import Search from './Search';
 
 class App extends React.Component {
   constructor(props) {
@@ -34,8 +36,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div id="reviews-section">
         <h1 className="App-header">Reviews</h1>
+
+        <div className="summary">
+          <div className="summary-container">
+
+            <div className="total-container">
+              <Total />
+            </div>
+
+            <div className="search-container">
+              <Search />
+            </div>
+
+          </div>
+        </div>
 
         <div className="details">
           <Ratings />
