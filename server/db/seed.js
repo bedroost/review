@@ -56,6 +56,11 @@ for (let i = 0; i < 100; i += 1) {
     const username = faker.name.firstName();
     const avatar = faker.internet.avatar();
     const response_text = faker.lorem.sentence();
+    // console.log('start: ', created_at.slice(0, 11));
+    const start = created_at.toISOString().slice(0, 10);
+    const currentDate = new Date();
+    const end = currentDate.toISOString().slice(0, 10);
+    const response_created_at = faker.date.between(start, end);
 
     // random number to determine if this review has text longer than 50 words
     const random_reviewLength = faker.random.number({ min: 0, max: 100 });
@@ -74,6 +79,7 @@ for (let i = 0; i < 100; i += 1) {
       review.response_username = response_username;
       review.response_avatar = response_avatar;
       review.response_text = response_text;
+      review.response_created_at = response_created_at;
     } else {
       review.created_at = created_at;
       review.text = random_reviewLength % 2 === 0 ? textShort : textLong;

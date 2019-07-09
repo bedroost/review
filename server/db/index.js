@@ -19,6 +19,7 @@ const reviewSchema = new mongoose.Schema({
   response_username: String,
   response_avatar: String,
   response_text: String,
+  response_created_at: { type: Date, default: Date.now },
 });
 
 // parent

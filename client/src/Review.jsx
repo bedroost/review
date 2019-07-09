@@ -43,6 +43,7 @@ class Review extends React.Component {
               <Response responseAvatar={this.props.responseAvatar}
                 responseUsername={this.props.responseUsername}
                 responseText={this.props.responseText}
+                responseCreatedAt={this.props.responseCreatedAt}
               />
             )
           }

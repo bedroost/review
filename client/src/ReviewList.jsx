@@ -12,6 +12,7 @@ const ReviewList = props => (
         responseUsername={review.response_username}
         responseAvatar={review.response_avatar}
         responseText={review.response_text}
+        responseCreatedAt={review.response_created_at}
       />
     ))}
   </div>
