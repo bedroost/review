@@ -1,15 +1,21 @@
+body {
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.0156em;
+  line-height: 1.375em;
+  color: #484848;
+  -webkit-font-smoothing: antialiased;
+}
+
 #reviews-section {
   max-width: 650px;
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 0.0469em;
-}
-
 .summary {
   margin-bottom: 12px;
-  color: #484848;
 }
 
 .summary-container {
@@ -21,7 +27,6 @@ body {
   font-size: 24px;
   font-weight: 800;
   line-height: 1.25em;
-  color: #484848;
 }
 
 .details {
@@ -43,7 +48,6 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  color: #484848;
 }
 
 #right {
@@ -68,14 +72,12 @@ body {
 
 /* REVIEW LIST */
 .reviewList-container {
-  margin-top: 16px;
   width: 100%;
 }
 
 /* REVIEW */
 .review-container {
   max-width: 100%;
-  color: #484848;
 }
 
 .profile {
@@ -95,7 +97,6 @@ body {
 }
 
 .review-username {
-  font-size: 16px;
   font-weight: bold;
 }
 
@@ -108,26 +109,29 @@ body {
 }
 
 .review-text {
-  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.read-more-button {
+  color: #008489;
+  text-decoration: none;
+  font: inherit;
+  background: transparent;
+  border: 0px;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  text-align: left;
 }
 
 .review-border-bottom {
   margin-top: 24px;
   margin-bottom: 24px;
   border: 0.5px solid #EBEBEB;
-}
-
-.read-more-button {
-  color: #008489;
-  font: inherit;
-  text-decoration: none;
-  background: transparent;
-  border: 0px;
-  margin: 0px;
-  padding: 0px;
-  user-select: auto;
-  cursor: pointer;
-  text-align: left;
 }
 
 /* RESPONSE */
@@ -157,7 +161,7 @@ body {
 }
 
 .response-text {
-  font-size: 16px;
+
 }
 
 .response-created_at {
