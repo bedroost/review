@@ -9,12 +9,17 @@ const Response = (props) => {
 
   return (
     <div className="response-container">
-      <div>
-        <img className="img-circle" src={`${props.responseAvatar}`} alt={`${props.responseUsername} User Profile`} />
+      <div className="img-response">
+        <img className="img-circle-response" src={`${props.responseAvatar}`} alt={`${props.responseUsername} User Profile`} />
       </div>
-      <div>{`Response from ${props.responseUsername}`}</div>
-      <div>{props.responseText}</div>
-      <div>{formattedDate}</div>
+
+      <div className="response-text-container">
+        <div className="response-username">
+          {`Response from ${props.responseUsername}`}
+        </div>
+        <div className="response-text">{props.responseText}</div>
+        <div className="response-created_at">{formattedDate}</div>
+      </div>
     </div>
   )
 };

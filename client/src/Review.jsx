@@ -16,12 +16,12 @@ class Review extends React.Component {
     const formattedDate = moment(timestamp).format('MMMM YYYY');
 
     return (
-      <div className="individual-review">
+      <div className="review-container">
 
         <div className="profile">
 
           <div>
-            <img className="img-circle" src={this.props.avatar} alt={`${this.props.username} User Profile`} />
+            <img className="img-circle-review" src={this.props.avatar} alt={`${this.props.username} User Profile`} />
           </div>
 
           <div className="username-date">
