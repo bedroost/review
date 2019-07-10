@@ -19,12 +19,10 @@ class App extends React.Component {
   }
 
   getData() {
-    // console.log(window.location.href);
-    // axios.get('/api/:listing_id/reviews')
-    axios.get('/api/10/reviews')
+    const listingId = window.location.href.split('/').pop();
+    axios.get(`/api/${listingId}/reviews`)
       .then((res) => {
-        console.log('axios response:', res);
-        console.log('res.data[0]', res.data[0]);
+        console.log('axios res.data[0]', res.data[0]);
         this.setState({
           reviews: res.data[0].reviews,
         });
