@@ -1,10 +1,10 @@
 import React from 'react';
-import ReviewListEntry from './ReviewListEntry';
+import ReviewListItem from './ReviewListItem';
 
 const ReviewList = props => (
   <div className="reviewList-container">
     {props.reviews.map(review => (
-      <ReviewListEntry
+      <ReviewListItem
         username={review.username}
         avatar={review.avatar}
         created_at={review.created_at}
