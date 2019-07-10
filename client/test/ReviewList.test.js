@@ -4,7 +4,13 @@ import React from 'react';
 import ReviewList from '../src/ReviewList';
 
 describe('<ReviewList /> rendering', () => {
-  it('should render three <p>', () => {
+
+  it('should render individual reviews', () => {
+    const wrapper = shallow(<ReviewList />);
+    expect(wrapper.contains('p')).toHaveLength(3);
+  });
+
+  it('should render seven <p>', () => {
     const wrapper = shallow(<ReviewList />);
     expect(wrapper.children('p')).toHaveLength(3);
   });

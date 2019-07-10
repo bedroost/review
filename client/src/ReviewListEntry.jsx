@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import Response from './Response';
 
-class Review extends React.Component {
+class ReviewListEntry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -89,4 +89,4 @@ class Review extends React.Component {
 }
 
 
-export default Review;
+export default ReviewListEntry;
