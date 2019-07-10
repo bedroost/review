@@ -2,7 +2,6 @@ import React from 'react';
 import moment from 'moment';
 
 const Response = (props) => {
-
   // js to convert created_at to Month-Year
   const timestamp = props.responseCreatedAt;
   const formattedDate = moment(timestamp).format('MMMM YYYY');
@@ -21,7 +20,7 @@ const Response = (props) => {
         <div className="response-created_at">{formattedDate}</div>
       </div>
     </div>
-  )
+  );
 };
 
 export default Response;
