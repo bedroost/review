@@ -1,7 +1,7 @@
 import React from 'react';
 import RatingsWell from './RatingsWell';
 
-const Ratings = () => (
+const Ratings = props => (
   <div className="ratings-container">
 
     <div className="left well">

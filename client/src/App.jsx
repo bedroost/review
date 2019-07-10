@@ -10,6 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       reviews: [],
+      ratings: {},
     };
     this.getData = this.getData.bind(this);
   }
@@ -25,6 +26,7 @@ class App extends React.Component {
         console.log('axios res.data[0]', res.data[0]);
         this.setState({
           reviews: res.data[0].reviews,
+          ratings: res.data[0].ratings,
         });
       })
       .catch((err) => {
@@ -52,7 +54,7 @@ class App extends React.Component {
         </div>
 
         <div className="details">
-          <Ratings />
+          <Ratings reviews={this.state.ratings}/>
           <ReviewList reviews={this.state.reviews} />
         </div>
       </div>
