@@ -34,8 +34,14 @@ body {
 
 .total-count-reviews {
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 725;
   line-height: 1.25em;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 .total-overall-stars {
