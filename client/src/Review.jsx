@@ -71,7 +71,8 @@ class Review extends React.Component {
         <div>
           {
             this.state.response && (
-              <Response responseAvatar={this.props.responseAvatar}
+              <Response
+                responseAvatar={this.props.responseAvatar}
                 responseUsername={this.props.responseUsername}
                 responseText={this.props.responseText}
                 responseCreatedAt={this.props.responseCreatedAt}

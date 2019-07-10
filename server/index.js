@@ -11,7 +11,6 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use('/rooms', express.static(path.join(__dirname, '../client/dist')));
 
-// app.get listing id endpoint responsed with res.sendFile index.html
 app.get('/rooms/:listingid', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'), (err) => {
     if (err) {
