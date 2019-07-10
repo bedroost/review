@@ -9,6 +9,8 @@ body {
   color: #484848;
   -webkit-font-smoothing: antialiased;
   max-width: 650px;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 .summary {
