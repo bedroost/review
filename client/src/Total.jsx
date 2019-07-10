@@ -1,9 +1,15 @@
 import React from 'react';
 
-const Total = () => (
-  <div>
+const Total = props => (
+  <div className="total-stars">
 
-    <span id="total-no-reviews">X NO. REVIEWS</span>
+    <div>
+      <span id="total-no-reviews">{`${props.reviews.length} Reviews`}</span>
+    </div>
+
+    <div className="stars">
+      <span>{props.ratings.overall}</span>
+    </div>
 
   </div>
 );

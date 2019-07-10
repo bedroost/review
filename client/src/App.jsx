@@ -41,7 +41,7 @@ class App extends React.Component {
           <div className="summary-container">
 
             <div className="total-container">
-              <Total />
+              <Total reviews={this.state.reviews} ratings={this.state.ratings} />
             </div>
 
             <div className="search-container">
