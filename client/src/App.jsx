@@ -54,7 +54,7 @@ class App extends React.Component {
         </div>
 
         <div className="details">
-          <Ratings reviews={this.state.ratings} />
+          <Ratings ratings={this.state.ratings} />
           <ReviewList reviews={this.state.reviews} />
         </div>
       </div>
