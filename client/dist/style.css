@@ -22,14 +22,26 @@ body {
   justify-content: space-between;
 }
 
-#total-no-reviews {
+.total-container {
+  width: 70%;
+}
+
+.total-stars {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.total-count-reviews {
   font-size: 24px;
   font-weight: 800;
   line-height: 1.25em;
 }
 
-.details {
-  max-width: 100%;
+.total-overall-stars {
+  margin-left: 16px;
+  color: #008489;
+  display: inline-block;
 }
 
 .summary-border-bottom {
@@ -38,11 +50,11 @@ body {
   display: block;
 }
 
-.test {
-  border: 1px solid #EBEBEB;
+/* RATINGS */
+.details {
+  max-width: 100%;
 }
 
-/* RATINGS */
 .ratings-container {
   display: flex;
   justify-content: space-between;
@@ -67,6 +79,7 @@ body {
 
 .stars {
   color: #008489;
+  display: inline-block;
 }
 
 /* REVIEW LIST */
