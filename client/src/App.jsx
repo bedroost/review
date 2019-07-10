@@ -36,14 +36,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="reviews-section">
-        <h1 className="App-header">Reviews</h1>
-
+      <div>
         <div className="summary">
           <div className="summary-container">
 
             <div className="total-container">
-              <Total />
+              <Total reviews={this.state.reviews} ratings={this.state.ratings} />
             </div>
 
             <div className="search-container">
@@ -54,7 +52,7 @@ class App extends React.Component {
         </div>
 
         <div className="details">
-          <Ratings reviews={this.state.ratings}/>
+          <Ratings ratings={this.state.ratings} />
           <ReviewList reviews={this.state.reviews} />
         </div>
       </div>

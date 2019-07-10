@@ -1,15 +1,24 @@
 import React from 'react';
-import RatingsWell from './RatingsWell';
+import RatingsWellLeft from './RatingsWellLeft';
+import RatingsWellRight from './RatingsWellRight';
 
 const Ratings = props => (
   <div className="ratings-container">
 
     <div className="left well">
-      <RatingsWell />
+      <RatingsWellLeft
+        accuracy={props.ratings.accuracy}
+        communication={props.ratings.communication}
+        cleanliness={props.ratings.cleanliness}
+      />
     </div>
 
     <div id="right" className="well">
-      <RatingsWell />
+      <RatingsWellRight
+        location={props.ratings.location}
+        check_in={props.ratings.check_in}
+        value={props.ratings.value}
+      />
     </div>
 
   </div>
