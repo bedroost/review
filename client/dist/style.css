@@ -8,9 +8,6 @@ body {
   line-height: 1.375em;
   color: #484848;
   -webkit-font-smoothing: antialiased;
-}
-
-#reviews-section {
   max-width: 650px;
 }
 

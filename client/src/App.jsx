@@ -36,9 +36,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="reviews-section">
-        <h1 className="App-header">Reviews</h1>
-
+      <div>
         <div className="summary">
           <div className="summary-container">
 
