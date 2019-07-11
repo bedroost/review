@@ -7,8 +7,12 @@ const Total = props => (
       <h2>{`${props.reviews.length} Reviews`}</h2>
     </div>
 
-    <div>
-      <span className="total-overall-stars">{props.ratings.overall}</span>
+    <div className="totalOverallStars">
+      { /* <span className="totalOverallStars">{props.ratings.overall}</span> */ }
+      <span className="fas fa-star"></span>
+      <span className="fas fa-star"></span>
+      <span className="fas fa-star"></span>
+      <span className="fas fa-star"></span>
     </div>
 
   </div>

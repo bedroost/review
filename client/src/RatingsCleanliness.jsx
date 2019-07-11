@@ -8,7 +8,11 @@ const RatingsCleanliness = props => (
     </div>
 
     <div className="stars">
-      <span>{props.cleanliness}</span>
+      { /* <span>{props.cleanliness}</span> */ }
+      <span className="fas fa-star"></span>
+      <span className="fas fa-star"></span>
+      <span className="fas fa-star"></span>
+      <span className="fas fa-star"></span>
     </div>
 
   </div>

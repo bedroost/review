@@ -8,7 +8,11 @@ const RatingsValue = props => (
     </div>
 
     <div className="stars">
-      <span>{props.value}</span>
+      { /* <span>{props.value}</span> */ }
+      <span className="fas fa-star"></span>
+      <span className="fas fa-star"></span>
+      <span className="fas fa-star"></span>
+      <span className="fas fa-star"></span>
     </div>
 
   </div>
