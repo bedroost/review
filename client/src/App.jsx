@@ -50,7 +50,7 @@ class App extends React.Component {
 
           </div>
         </div>
-
+        <div className="summary-border-bottom" />
         <div className="details">
           <Ratings ratings={this.state.ratings} />
           <ReviewList reviews={this.state.reviews} />
