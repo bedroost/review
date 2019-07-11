@@ -8,7 +8,11 @@ const RatingsLocation = props => (
     </div>
 
     <div className="stars">
-      <span>{props.location}</span>
+      { /* <span>{props.location}</span> */ }
+      <span className="fas fa-star"></span>
+      <span className="fas fa-star"></span>
+      <span className="fas fa-star"></span>
+      <span className="fas fa-star"></span>
     </div>
 
   </div>
