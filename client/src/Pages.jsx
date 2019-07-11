@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Pages = () => (
+const Pages = props => (
   <div className="pagesContainer">
     <nav className="pagesNav">
       <div>
         <ul className="pagesList">
           <li>
             <button type="button" className="pagesButton">
-              <div className="buttonDiv">1</div>
+              <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageClick(e)}>1</div>
             </button>
           </li>
           <li>

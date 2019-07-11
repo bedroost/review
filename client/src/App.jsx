@@ -17,6 +17,7 @@ class App extends React.Component {
       ratings: {},
     };
     this.getData = this.getData.bind(this);
+    this.handlePageClick = this.handlePageClick.bind(this);
   }
 
   componentDidMount() {
@@ -31,13 +32,19 @@ class App extends React.Component {
         this.setState({
           totalReviews: res.data[0].numReviews,
           allReviews: res.data[0].reviews,
-          displayedReviews: res.data[0].reviews.slice(0, (7 * this.state.currentPage)),
+          displayedReviews: res.data[0].reviews
+            .slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
           ratings: res.data[0].ratings,
         });
       })
       .catch((err) => {
         console.log('axios error:', err);
       });
+  }
+
+
+  handlePageClick(e) {
+    console.log(e.target.innerText);
   }
 
   render() {
@@ -63,7 +70,7 @@ class App extends React.Component {
         </div>
 
         <div>
-          <Pages />
+          <Pages handlePageClick={this.handlePageClick}/>
         </div>
 
       </div>
