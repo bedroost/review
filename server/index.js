@@ -27,7 +27,7 @@ app.get('/api/:listingid/reviews', (req, res) => {
   console.log('req.params: ', req.params);
   console.log('req.params.listingid', req.params.listingid);
 
-  db.Listing.find({ listingid: req.params.listingid }, (err, listing) => {
+  db.Listing.find({ listingid: req.params.listingid }, { reviews: { $slice: 7 } }, (err, listing) => {
     if (err) {
       console.log(err);
     } else {
