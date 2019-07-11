@@ -34,6 +34,7 @@ const listingSchema = new mongoose.Schema({
     check_in: Number,
     value: Number,
   },
+  numReviews: Number,
   reviews: [reviewSchema],
 });
 
