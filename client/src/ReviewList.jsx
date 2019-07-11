@@ -3,16 +3,16 @@ import ReviewListItem from './ReviewListItem';
 
 const ReviewList = props => (
   <div className="reviewList-container">
-    {props.reviews.map(review => (
+    {props.displayedReviews.map(displayedReview => (
       <ReviewListItem
-        username={review.username}
-        avatar={review.avatar}
-        created_at={review.created_at}
-        text={review.text}
-        responseUsername={review.response_username}
-        responseAvatar={review.response_avatar}
-        responseText={review.response_text}
-        responseCreatedAt={review.response_created_at}
+        username={displayedReview.username}
+        avatar={displayedReview.avatar}
+        created_at={displayedReview.created_at}
+        text={displayedReview.text}
+        responseUsername={displayedReview.response_username}
+        responseAvatar={displayedReview.response_avatar}
+        responseText={displayedReview.response_text}
+        responseCreatedAt={displayedReview.response_created_at}
       />
     ))}
   </div>

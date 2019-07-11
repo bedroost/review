@@ -11,7 +11,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       totalReviews: null,
-      reviews: [],
+      allReviews: [],
+      displayedReviews: [],
+      currentPage: 1,
       ratings: {},
     };
     this.getData = this.getData.bind(this);
@@ -28,7 +30,8 @@ class App extends React.Component {
         // console.log('axios res.data[0]', res.data[0]);
         this.setState({
           totalReviews: res.data[0].numReviews,
-          reviews: res.data[0].reviews,
+          allReviews: res.data[0].reviews,
+          displayedReviews: res.data[0].reviews.slice(0, (7 * this.state.currentPage)),
           ratings: res.data[0].ratings,
         });
       })
@@ -56,7 +59,7 @@ class App extends React.Component {
 
         <div className="details">
           <Ratings ratings={this.state.ratings} />
-          <ReviewList reviews={this.state.reviews} />
+          <ReviewList displayedReviews={this.state.displayedReviews} />
         </div>
 
         <div>

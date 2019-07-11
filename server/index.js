@@ -29,7 +29,6 @@ app.get('/api/:listingid/reviews', (req, res) => {
 
   db.Listing.find(
     { listingid: req.params.listingid },
-    { reviews: { $slice: [0, 7] } },
     (err, listing) => {
       if (err) {
         console.log(err);
