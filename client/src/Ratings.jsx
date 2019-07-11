@@ -5,7 +5,7 @@ import RatingsWellRight from './RatingsWellRight';
 const Ratings = props => (
   <div className="ratings-container">
 
-    <div className="left well">
+    <div id="left" className="well">
       <RatingsWellLeft
         accuracy={props.ratings.accuracy}
         communication={props.ratings.communication}
