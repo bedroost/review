@@ -9,6 +9,7 @@ const RatingsCommunication = props => (
 
     <div className="stars">
       <span>{props.communication}</span>
+      <span className="fas fa-star"></span>
     </div>
 
   </div>
