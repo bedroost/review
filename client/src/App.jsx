@@ -4,6 +4,7 @@ import ReviewList from './ReviewList';
 import Ratings from './Ratings';
 import Total from './Total';
 import Search from './Search';
+import Pages from './Pages';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,24 +40,29 @@ class App extends React.Component {
   render() {
     return (
       <div className="reviewApp">
+
         <div className="summary">
           <div className="summary-container">
-
             <div className="total-container">
               <Total totalReviews={this.state.totalReviews} ratings={this.state.ratings} />
             </div>
-
             <div className="search-container">
               <Search />
             </div>
-
           </div>
         </div>
+
         <div className="summary-border-bottom" />
+
         <div className="details">
           <Ratings ratings={this.state.ratings} />
           <ReviewList reviews={this.state.reviews} />
         </div>
+
+        <div>
+          <Pages />
+        </div>
+
       </div>
     );
   }
