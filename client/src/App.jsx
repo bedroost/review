@@ -9,6 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      totalReviews: null,
       reviews: [],
       ratings: {},
     };
@@ -25,6 +26,7 @@ class App extends React.Component {
       .then((res) => {
         // console.log('axios res.data[0]', res.data[0]);
         this.setState({
+          totalReviews: res.data[0].numReviews,
           reviews: res.data[0].reviews,
           ratings: res.data[0].ratings,
         });
@@ -41,7 +43,7 @@ class App extends React.Component {
           <div className="summary-container">
 
             <div className="total-container">
-              <Total reviews={this.state.reviews} ratings={this.state.ratings} />
+              <Total totalReviews={this.state.totalReviews} ratings={this.state.ratings} />
             </div>
 
             <div className="search-container">
