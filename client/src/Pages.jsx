@@ -12,18 +12,18 @@ const Pages = props => (
           </li>
           <li>
             <button type="button" className="pagesButton">
-              <div className="buttonDiv">2</div>
+              <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageClick(e)}>2</div>
             </button>
           </li>
           <li>
             <button type="button" className="pagesButton">
-              <div className="buttonDiv">3</div>
+              <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageClick(e)}>3</div>
             </button>
           </li>
           <li><div>...</div></li>
           <li>
             <button type="button" className="pagesButton">
-              <div className="buttonDiv">10</div>
+              <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageClick(e)}>4</div>
             </button>
           </li>
         </ul>

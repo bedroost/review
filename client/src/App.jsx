@@ -18,6 +18,7 @@ class App extends React.Component {
     };
     this.getData = this.getData.bind(this);
     this.handlePageClick = this.handlePageClick.bind(this);
+    this.sliceReviews = this.sliceReviews.bind(this);
   }
 
   componentDidMount() {
@@ -33,7 +34,7 @@ class App extends React.Component {
           totalReviews: res.data[0].numReviews,
           allReviews: res.data[0].reviews,
           displayedReviews: res.data[0].reviews
-            .slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
+            .slice(0, (this.state.currentPage * 7)),
           ratings: res.data[0].ratings,
         });
       })
@@ -45,6 +46,17 @@ class App extends React.Component {
 
   handlePageClick(e) {
     console.log(e.target.innerText);
+    const clickedPage = e.target.innerText;
+    this.setState({
+      currentPage: clickedPage,
+    }, () => this.sliceReviews());
+  }
+
+  sliceReviews() {
+    this.setState({
+      displayedReviews: this.state.allReviews
+        .slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
+    });
   }
 
   render() {
