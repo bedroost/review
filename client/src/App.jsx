@@ -23,7 +23,7 @@ class App extends React.Component {
     const listingId = window.location.href.split('/').pop();
     axios.get(`/api/${listingId}/reviews`)
       .then((res) => {
-        console.log('axios res.data[0]', res.data[0]);
+        // console.log('axios res.data[0]', res.data[0]);
         this.setState({
           reviews: res.data[0].reviews,
           ratings: res.data[0].ratings,
@@ -36,7 +36,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="reviewApp">
         <div className="summary">
           <div className="summary-container">
 
