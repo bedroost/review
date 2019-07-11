@@ -1,9 +1,13 @@
 import React from 'react';
 
 const Search = () => (
-  <div>
+  <div className="searchContainer">
 
-    <div>
+    <div className="spyglass">
+      <i className="fas fa-search"></i>
+    </div>
+
+    <div className="searchInput">
       <input type="text" id="name" placeholder="Search reviews" />
     </div>
 

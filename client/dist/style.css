@@ -56,6 +56,41 @@ h2 {
   display: block;
 }
 
+/* SEARCH */
+.searchContainer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.spyglass {
+  color: #484848;
+  height: 1em;
+  width: 1em;
+  display: block;
+}
+
+input[type=text] {
+  font-size: 14px;
+  line-height: 22px;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #484848;
+  opacity: 50%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color:  #484848;
+  font-weight: 600;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+input[type=text]:focus {
+  background: #fff;
+	border: 1px solid #008489;
+  outline: #484848;
+}
+
 /* RATINGS */
 .details {
   max-width: 100%;
