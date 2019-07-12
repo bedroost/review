@@ -9,8 +9,8 @@ const PageButton = (props) => {
 
   return (
     <li>
-      <button type="button" className="pagesButton">
-        <div className="buttonDiv" role="button" tabIndex="0" onClick={e => handlePageClick(e)}>{ pageValue }</div>
+      <button type="button" className="pagesButton numButton">
+        <div className="buttonDivNum" role="button" tabIndex="0" onClick={e => handlePageClick(e)}>{ pageValue }</div>
       </button>
     </li>
   );

@@ -17,6 +17,10 @@ button:hover {
   text-decoration: underline;
 }
 
+ul {
+  padding-left: 0px;
+}
+
 /* TOTAL */
 
 .summary {
@@ -245,6 +249,10 @@ input[type=text]:focus {
   padding: 0;
 }
 
+.navButton:hover {
+  text-decoration: none;
+}
+
 .pagesButton {
   color: #008489;
   text-decoration: none;
@@ -253,20 +261,30 @@ input[type=text]:focus {
   border: 0px;
   cursor: pointer;
   margin: 0px;
-  padding: 0px;
+  padding-left: 7px;
+  padding-right: 7px;
   -webkit-user-select: auto;
   -moz-user-select: auto;
   -ms-user-select: auto;
   user-select: auto;
 }
 
-.buttonDiv {
+.buttonDivNum {
   width: 32px;
   height: 32px;
   line-height: 32px;
   text-align: center;
-  /* background-color: rgb(0, 132, 137); */
-  /* color: rgb(255, 255, 255); */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonDivNav {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
   border: 1px solid #008489;
   border-radius: 50%;
   display: flex;
