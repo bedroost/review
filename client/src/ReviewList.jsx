@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import ReviewListItem from './ReviewListItem';
 
@@ -8,6 +9,7 @@ const ReviewList = (props) => {
     <div className="reviewList-container">
       {displayedReviews.map(displayedReview => (
         <ReviewListItem
+          key={displayedReview._id}
           username={displayedReview.username}
           avatar={displayedReview.avatar}
           createdAt={displayedReview.created_at}
