@@ -4,13 +4,13 @@ import React from 'react';
 const PageButton = (props) => {
   const {
     handlePageClick,
-    currentPage,
+    pageValue,
   } = props;
 
   return (
     <li>
       <button type="button" className="pagesButton">
-        <div className="buttonDiv" role="button" tabIndex="0" onClick={e => handlePageClick(e)}>{ currentPage }</div>
+        <div className="buttonDiv" role="button" tabIndex="0" onClick={e => handlePageClick(e)}>{ pageValue }</div>
       </button>
     </li>
   );
