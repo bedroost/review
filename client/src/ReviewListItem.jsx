@@ -6,15 +6,14 @@ class ReviewListItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLongerThan50: this.props.text.split(' ').length > 50,
-      completeReviewText: null,
+      completeReviewText: false,
     };
     this.handleClickReadMore = this.handleClickReadMore.bind(this);
   }
 
   handleClickReadMore() {
     this.setState({
-      completeReviewText: this.props.text,
+      completeReviewText: true,
     });
   }
 
@@ -32,32 +31,31 @@ class ReviewListItem extends React.Component {
     } = this.props;
 
     const {
-      isLongerThan50,
       completeReviewText,
     } = this.state;
 
-    // js to convert created_at to Month-Year format
+    // js to convert createdAt to Month-Year format
     const timestamp = createdAt;
     const formattedDate = moment(timestamp).format('MMMM YYYY');
 
-    // conditional rendering to hide second half of long review until "Read more" is clicked
+    // use conditional rendering to hide second half of long review until "Read more" is clicked
+    // if it's a long review (>50 words) render only first 50 words followed by "Read more" button.
+    // if "Read more" button is clicked, set state to render the entire text of review
+    // else render the whole review (<50 words)
     const splitText = text.split(' ');
-    const first50 = splitText.slice(0, 50).join(' ');
+    const reviewWordCount = splitText.length;
+    const first50Words = splitText.slice(0, 50).join(' ');
     let reviewText;
 
-    // if review is a long review (>50 words)
-    if (isLongerThan50) {
-      // render only first 50 words followed by "Read more" button.
-      // if "Read more" button is clicked, set state to render the entire text of review
+    if (reviewWordCount > 50) {
       reviewText = (
         <div>
-          {`${first50}...`}
+          {`${first50Words}...`}
           <button type="button" className="read-more-button" onClick={() => this.handleClickReadMore()}>Read more</button>
         </div>
       );
-      // else render the whole review (<50 words)
     } else {
-      reviewText = first50;
+      reviewText = first50Words;
     }
 
     return (
@@ -80,7 +78,7 @@ class ReviewListItem extends React.Component {
 
         <div className="text-container">
           <div className="review-text">
-            {completeReviewText || reviewText}
+            {completeReviewText ? text : reviewText}
           </div>
         </div>
 
