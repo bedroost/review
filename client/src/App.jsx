@@ -62,14 +62,14 @@ class App extends React.Component {
     const previousPage = this.state.currentPage - 1;
     this.setState({
       currentPage: previousPage,
-    });
+    }, () => this.sliceReviews());
   }
 
   handlePageForwardClick() {
-    const previousPage = this.state.currentPage + 1;
+    const nextPage = this.state.currentPage + 1;
     this.setState({
-      currentPage: previousPage,
-    });
+      currentPage: nextPage,
+    }, () => this.sliceReviews());
   }
 
   render() {
