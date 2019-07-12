@@ -81,6 +81,56 @@ const Pages = (props) => {
           <PageForward />
         </div>
       );
+    } else if (currentPage === (n - 3)) {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageBack />
+          <PageButton handlePageClick={handlePageClick} pageValue={1} />
+          <li><div>...</div></li>
+          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
+          <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 2} />
+          <PageButton handlePageClick={handlePageClick} pageValue={n} />
+          <PageForward />
+        </div>
+      );
+    } else if (currentPage === (n - 2)) {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageBack />
+          <PageButton handlePageClick={handlePageClick} pageValue={1} />
+          <li><div>...</div></li>
+          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
+          <PageButton handlePageClick={handlePageClick} pageValue={n} />
+          <PageForward />
+        </div>
+      );
+    } else if (currentPage === (n - 1)) {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageBack />
+          <PageButton handlePageClick={handlePageClick} pageValue={1} />
+          <li><div>...</div></li>
+          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton handlePageClick={handlePageClick} pageValue={n} />
+          <PageForward />
+        </div>
+      );
+    } else if (currentPage === n) {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageBack />
+          <PageButton handlePageClick={handlePageClick} pageValue={1} />
+          <li><div>...</div></li>
+          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 2} />
+          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
+        </div>
+      );
     } else {
       pagesDisplayed = (
         <div>
