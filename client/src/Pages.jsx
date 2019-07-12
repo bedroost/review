@@ -28,6 +28,18 @@ const Pages = (props) => {
           <PageForward />
         </div>
       );
+    } else if (currentPage === 2) {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageBack />
+          <PageButton handlePageClick={handlePageClick} currentPage={currentPage - 1} />
+          <PageButton handlePageClick={handlePageClick} currentPage={currentPage} />
+          <PageButton handlePageClick={handlePageClick} currentPage={currentPage + 1} />
+          <li><div>...</div></li>
+          <PageButton handlePageClick={handlePageClick} currentPage={n} />
+          <PageForward />
+        </div>
+      );
     } else {
       pagesDisplayed = (
         <div>
