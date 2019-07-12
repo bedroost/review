@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PageButton from './PageButton';
+import PageBack from './PageBack';
+import PageForward from './PageForward';
 
 const Pages = (props) => {
   const {
@@ -19,35 +21,11 @@ const Pages = (props) => {
       pagesDisplayed = (
         <div className="pagesList">
           <PageButton handlePageClick={handlePageClick} currentPage={currentPage} />
-
-          <li>
-            <button type="button" className="pagesButton">
-              <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageClick(e)}>{ currentPage + 1 }</div>
-            </button>
-          </li>
-
-          <li>
-            <button type="button" className="pagesButton">
-              <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageClick(e)}>{ currentPage + 2 }</div>
-            </button>
-          </li>
-
+          <PageButton handlePageClick={handlePageClick} currentPage={currentPage + 1} />
+          <PageButton handlePageClick={handlePageClick} currentPage={currentPage + 2} />
           <li><div>...</div></li>
-
-          <li>
-            <button type="button" className="pagesButton">
-              <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageClick(e)}>{ n }</div>
-            </button>
-          </li>
-
-          <li>
-            <button type="button" className="pagesButton">
-              <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageClick(e)}>
-                <i className="material-icons">navigate_next</i>
-              </div>
-            </button>
-          </li>
-
+          <PageButton handlePageClick={handlePageClick} currentPage={n} />
+          <PageForward />
         </div>
       );
     } else {
