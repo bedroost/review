@@ -6,7 +6,6 @@ class ReviewListItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasResponse: this.props.hasResponse,
       isLongerThan50: this.props.text.split(' ').length > 50,
       completeReviewText: null,
     };
@@ -29,10 +28,10 @@ class ReviewListItem extends React.Component {
       responseUsername,
       responseText,
       responseCreatedAt,
+      hasResponse,
     } = this.props;
 
     const {
-      hasResponse,
       isLongerThan50,
       completeReviewText,
     } = this.state;
