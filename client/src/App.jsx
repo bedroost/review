@@ -107,6 +107,8 @@ class App extends React.Component {
             totalReviews={totalReviews}
             handlePageClick={this.handlePageClick}
             handlePageBackClick={this.handlePageBackClick}
+            handlePageForwardClick={this.handlePageForwardClick}
+
           />
         </div>
 

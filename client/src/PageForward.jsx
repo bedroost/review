@@ -14,7 +14,7 @@ const PageForward = (props) => {
         </button>
       </li>
     </div>
-  )
+  );
 };
 
 export default PageForward;
