@@ -33,8 +33,7 @@ class App extends React.Component {
         this.setState({
           totalReviews: res.data[0].numReviews,
           allReviews: res.data[0].reviews,
-          displayedReviews: res.data[0].reviews
-            .slice(0, (this.state.currentPage * 7)),
+          displayedReviews: res.data[0].reviews.slice(0, 7),
           ratings: res.data[0].ratings,
         });
       })
@@ -53,19 +52,24 @@ class App extends React.Component {
 
   sliceReviews() {
     this.setState({
-      displayedReviews: this.state.allReviews
-        .slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
+      displayedReviews: this.state.allReviews.slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
     });
   }
 
   render() {
+    const {
+      totalReviews,
+      displayedReviews,
+      ratings,
+    } = this.state;
+
     return (
       <div className="reviewApp">
 
         <div className="summary">
           <div className="summary-container">
             <div className="total-container">
-              <Total totalReviews={this.state.totalReviews} ratings={this.state.ratings} />
+              <Total totalReviews={totalReviews} ratings={ratings} />
             </div>
             <div className="search-container">
               <Search />
@@ -76,8 +80,8 @@ class App extends React.Component {
         <div className="summary-border-bottom" />
 
         <div className="details">
-          <Ratings ratings={this.state.ratings} />
-          <ReviewList displayedReviews={this.state.displayedReviews} />
+          <Ratings ratings={ratings} />
+          <ReviewList displayedReviews={displayedReviews} />
         </div>
 
         <div>

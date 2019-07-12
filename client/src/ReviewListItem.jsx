@@ -8,29 +8,46 @@ class ReviewListItem extends React.Component {
     this.state = {
       hasResponse: this.props.hasResponse,
       isLongerThan50: this.props.text.split(' ').length > 50,
-      reviewText: null,
+      completeReviewText: null,
     };
     this.handleClickReadMore = this.handleClickReadMore.bind(this);
   }
 
   handleClickReadMore() {
     this.setState({
-      reviewText: this.props.text,
+      completeReviewText: this.props.text,
     });
   }
 
   render() {
+    const {
+      avatar,
+      username,
+      text,
+      createdAt,
+      responseAvatar,
+      responseUsername,
+      responseText,
+      responseCreatedAt,
+    } = this.props;
+
+    const {
+      hasResponse,
+      isLongerThan50,
+      completeReviewText,
+    } = this.state;
+
     // js to convert created_at to Month-Year format
-    const timestamp = this.props.created_at;
+    const timestamp = createdAt;
     const formattedDate = moment(timestamp).format('MMMM YYYY');
 
     // conditional rendering to hide second half of long review until "Read more" is clicked
-    const splitText = this.props.text.split(' ');
+    const splitText = text.split(' ');
     const first50 = splitText.slice(0, 50).join(' ');
     let reviewText;
 
     // if review is a long review (>50 words)
-    if (this.state.isLongerThan50) {
+    if (isLongerThan50) {
       // render only first 50 words followed by "Read more" button.
       // if "Read more" button is clicked, set state to render the entire text of review
       reviewText = (
@@ -50,11 +67,11 @@ class ReviewListItem extends React.Component {
         <div className="profile">
 
           <div>
-            <img className="img-circle-review" src={this.props.avatar} alt={`${this.props.username} User Profile`} />
+            <img className="img-circle-review" src={avatar} alt={`${username} User Profile`} />
           </div>
 
           <div className="username-date">
-            <div className="review-username">{this.props.username}</div>
+            <div className="review-username">{username}</div>
             <div className="review-created_at">
               <span>{formattedDate}</span>
             </div>
@@ -64,18 +81,18 @@ class ReviewListItem extends React.Component {
 
         <div className="text-container">
           <div className="review-text">
-            {this.state.reviewText || reviewText}
+            {completeReviewText || reviewText}
           </div>
         </div>
 
         <div>
           {
-            this.state.hasResponse && (
+            hasResponse && (
               <Response
-                responseAvatar={this.props.responseAvatar}
-                responseUsername={this.props.responseUsername}
-                responseText={this.props.responseText}
-                responseCreatedAt={this.props.responseCreatedAt}
+                responseAvatar={responseAvatar}
+                responseUsername={responseUsername}
+                responseText={responseText}
+                responseCreatedAt={responseCreatedAt}
               />
             )
           }
