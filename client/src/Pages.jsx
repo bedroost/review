@@ -16,8 +16,8 @@ const Pages = (props) => {
   const n = Math.ceil(totalReviews / 7);
   let pagesDisplayed;
 
-  // if CP = 1
-  // render button divs with CP, CP+1, CP+2, ..., n, >
+  // page buttons will render depending on:
+  // max number of pages and current page state
   if (n >= 6) {
     if (currentPage === 1) {
       pagesDisplayed = (
