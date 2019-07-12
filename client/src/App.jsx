@@ -61,6 +61,7 @@ class App extends React.Component {
       totalReviews,
       displayedReviews,
       ratings,
+      currentPage,
     } = this.state;
 
     return (
@@ -85,7 +86,11 @@ class App extends React.Component {
         </div>
 
         <div>
-          <Pages handlePageClick={this.handlePageClick} />
+          <Pages
+            currentPage={currentPage}
+            totalReviews={totalReviews}
+            handlePageClick={this.handlePageClick}
+          />
         </div>
 
       </div>
