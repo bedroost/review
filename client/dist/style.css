@@ -292,6 +292,11 @@ input[type=text]:focus {
   justify-content: center;
 }
 
+.buttonDivNum:focus, .buttonDivNav:focus {
+  outline:none;
+  box-shadow: none;
+}
+
 .activePage {
   color: #ffffff;
   background-color: #008489;
