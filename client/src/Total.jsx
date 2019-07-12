@@ -4,7 +4,7 @@ const Total = props => (
   <div className="total-stars">
 
     <div className="total-count-reviews">
-      <h2>{`${props.reviews.length} Reviews`}</h2>
+      <h2>{`${props.totalReviews} Reviews`}</h2>
     </div>
 
     <div className="totalOverallStars">

@@ -4,8 +4,13 @@ const faker = require('faker');
 const db = require('./index');
 
 // helper function to make a new Listing instance
-const listingMaker = (listingid, ratings, reviews) => (
-  new db.Listing({ listingid, ratings, reviews })
+const listingMaker = (listingid, ratings, numReviews, reviews) => (
+  new db.Listing({
+    listingid,
+    ratings,
+    numReviews,
+    reviews,
+  })
 );
 
 // helper function to sort reviews array by created_at, most recent first, before saving to document
@@ -21,7 +26,7 @@ for (let i = 0; i < 100; i += 1) {
   // use faker to make random values to assign to schema keys:
   // each listing will have same ratings, response_username, response_avatar
   // each listing will have variance in reviews array
-  const numReviews = faker.random.number({ min: 5, max: 150 });
+  const numReviews = faker.random.number({ min: 5, max: 200 });
   console.log(`Listing index ${i} has ${numReviews} reviews`);
   const accuracy = faker.random.number({ min: 1, max: 5 });
   const communication = faker.random.number({ min: 1, max: 5 });
@@ -76,15 +81,17 @@ for (let i = 0; i < 100; i += 1) {
       review.text = random_reviewLength % 2 === 0 ? textShort : textLong;
       review.username = username;
       review.avatar = avatar;
+      review.hasResponse = true;
       review.response_username = response_username;
       review.response_avatar = response_avatar;
-      review.response_text = response_text;
       review.response_created_at = response_created_at;
+      review.response_text = response_text;
     } else {
       review.created_at = created_at;
       review.text = random_reviewLength % 2 === 0 ? textShort : textLong;
       review.username = username;
       review.avatar = avatar;
+      review.hasResponse = false;
     }
 
     // add the populated review object into the reviews array
@@ -95,7 +102,7 @@ for (let i = 0; i < 100; i += 1) {
   sortByCreated_At(reviews);
 
   // pass in ratings object and reviews array into new Listing instance
-  const newListing = listingMaker(listingid, ratings, reviews);
+  const newListing = listingMaker(listingid, ratings, numReviews, reviews);
 
   // save newListing to database
   newListing.save((err) => {

@@ -4,15 +4,23 @@ import ReviewList from './ReviewList';
 import Ratings from './Ratings';
 import Total from './Total';
 import Search from './Search';
+import Pages from './Pages';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: [],
+      totalReviews: null,
+      allReviews: [],
+      displayedReviews: [],
+      currentPage: 1,
       ratings: {},
     };
     this.getData = this.getData.bind(this);
+    this.sliceReviews = this.sliceReviews.bind(this);
+    this.handlePageClick = this.handlePageClick.bind(this);
+    this.handlePageBackClick = this.handlePageBackClick.bind(this);
+    this.handlePageForwardClick = this.handlePageForwardClick.bind(this);
   }
 
   componentDidMount() {
@@ -25,7 +33,9 @@ class App extends React.Component {
       .then((res) => {
         // console.log('axios res.data[0]', res.data[0]);
         this.setState({
-          reviews: res.data[0].reviews,
+          totalReviews: res.data[0].numReviews,
+          allReviews: res.data[0].reviews,
+          displayedReviews: res.data[0].reviews.slice(0, 7),
           ratings: res.data[0].ratings,
         });
       })
@@ -34,27 +44,74 @@ class App extends React.Component {
       });
   }
 
+  sliceReviews() {
+    this.setState({
+      displayedReviews: this.state.allReviews.slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
+    });
+  }
+
+  handlePageClick(e) {
+    console.log(e.target.innerText);
+    const clickedPage = Number(e.target.innerText);
+    this.setState({
+      currentPage: clickedPage,
+    }, () => this.sliceReviews());
+  }
+
+  handlePageBackClick() {
+    const previousPage = this.state.currentPage - 1;
+    this.setState({
+      currentPage: previousPage,
+    }, () => this.sliceReviews());
+  }
+
+  handlePageForwardClick() {
+    const nextPage = this.state.currentPage + 1;
+    this.setState({
+      currentPage: nextPage,
+    }, () => this.sliceReviews());
+  }
+
   render() {
+    const {
+      totalReviews,
+      displayedReviews,
+      ratings,
+      currentPage,
+    } = this.state;
+
     return (
       <div className="reviewApp">
+
         <div className="summary">
           <div className="summary-container">
-
             <div className="total-container">
-              <Total reviews={this.state.reviews} ratings={this.state.ratings} />
+              <Total totalReviews={totalReviews} ratings={ratings} />
             </div>
-
             <div className="search-container">
               <Search />
             </div>
-
           </div>
         </div>
+
         <div className="summary-border-bottom" />
+
         <div className="details">
-          <Ratings ratings={this.state.ratings} />
-          <ReviewList reviews={this.state.reviews} />
+          <Ratings ratings={ratings} />
+          <ReviewList displayedReviews={displayedReviews} />
         </div>
+
+        <div>
+          <Pages
+            currentPage={currentPage}
+            totalReviews={totalReviews}
+            handlePageClick={this.handlePageClick}
+            handlePageBackClick={this.handlePageBackClick}
+            handlePageForwardClick={this.handlePageForwardClick}
+
+          />
+        </div>
+
       </div>
     );
   }

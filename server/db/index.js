@@ -16,10 +16,11 @@ const reviewSchema = new mongoose.Schema({
   text: String,
   username: String,
   avatar: String,
+  hasResponse: Boolean,
   response_username: String,
   response_avatar: String,
   response_text: String,
-  response_created_at: { type: Date, default: Date.now },
+  response_created_at: Date,
 });
 
 // parent
@@ -34,6 +35,7 @@ const listingSchema = new mongoose.Schema({
     check_in: Number,
     value: Number,
   },
+  numReviews: Number,
   reviews: [reviewSchema],
 });
 
