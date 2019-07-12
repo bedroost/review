@@ -244,6 +244,38 @@ const Pages = (props) => {
         </div>
       );
     }
+  } else if (n === 3) {
+    if (currentPage === 1) {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={2} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
+        </div>
+      );
+    } else if (currentPage === 2) {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageBack handlePageBackClick={handlePageBackClick} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
+        </div>
+      );
+    // final case where currentPage === n = 3
+    } else {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageBack handlePageBackClick={handlePageBackClick} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n - 2} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n - 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
+        </div>
+      );
+    }
   } else if (n === 2) {
     if (currentPage === 1) {
       pagesDisplayed = (
@@ -263,14 +295,9 @@ const Pages = (props) => {
         </div>
       );
     }
-  } else if (n === 1) {
-    pagesDisplayed = null;
+  // else final edge case is n === 1. No page nav when there's only 1 page of reviews
   } else {
-    pagesDisplayed = (
-      <div>
-        <div>Todo for cases n = 3, 4, and 5 </div>
-      </div>
-    );
+    pagesDisplayed = null;
   }
 
   return (
