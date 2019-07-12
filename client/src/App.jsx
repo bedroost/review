@@ -44,7 +44,7 @@ class App extends React.Component {
 
   handlePageClick(e) {
     console.log(e.target.innerText);
-    const clickedPage = e.target.innerText;
+    const clickedPage = Number(e.target.innerText);
     this.setState({
       currentPage: clickedPage,
     }, () => this.sliceReviews());
