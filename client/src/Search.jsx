@@ -4,7 +4,7 @@ const Search = () => (
   <div className="searchContainer">
 
     <div className="spyglass">
-      <i className="fas fa-search"></i>
+      <i className="material-icons">search</i>
     </div>
 
     <div className="searchInput">
