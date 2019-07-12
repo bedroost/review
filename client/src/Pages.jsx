@@ -152,27 +152,6 @@ const Pages = (props) => {
         <div>
           <ul>
             { pagesDisplayed }
-            { /* <li>
-              <button type="button" className="pagesButton">
-                <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageClick(e)}>1</div>
-              </button>
-            </li>
-            <li>
-              <button type="button" className="pagesButton">
-                <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageClick(e)}>2</div>
-              </button>
-            </li>
-            <li>
-              <button type="button" className="pagesButton">
-                <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageClick(e)}>3</div>
-              </button>
-            </li>
-            <li><div>...</div></li>
-            <li>
-              <button type="button" className="pagesButton">
-                <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageClick(e)}>4</div>
-              </button>
-            </li> */ }
           </ul>
         </div>
       </nav>
