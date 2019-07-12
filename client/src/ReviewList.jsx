@@ -9,6 +9,7 @@ const ReviewList = props => (
         avatar={displayedReview.avatar}
         created_at={displayedReview.created_at}
         text={displayedReview.text}
+        hasResponse={displayedReview.hasResponse}
         responseUsername={displayedReview.response_username}
         responseAvatar={displayedReview.response_avatar}
         responseText={displayedReview.response_text}

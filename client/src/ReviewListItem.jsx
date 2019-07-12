@@ -6,7 +6,7 @@ class ReviewListItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      response: this.props.responseUsername,
+      hasResponse: this.props.hasResponse,
       isLongerThan50: this.props.text.split(' ').length > 50,
       reviewText: null,
     };
@@ -70,7 +70,7 @@ class ReviewListItem extends React.Component {
 
         <div>
           {
-            this.state.response && (
+            this.state.hasResponse && (
               <Response
                 responseAvatar={this.props.responseAvatar}
                 responseUsername={this.props.responseUsername}
