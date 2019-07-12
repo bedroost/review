@@ -135,6 +135,53 @@ const Pages = (props) => {
         </div>
       );
     }
+  } else if (n === 4) {
+    if (currentPage === 1) {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 2} />
+          <li><div>...</div></li>
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
+        </div>
+      );
+    } else if (currentPage === 2) {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageBack handlePageBackClick={handlePageBackClick} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 1} />
+          <li><div>...</div></li>
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
+        </div>
+      );
+    } else if (currentPage === 3) {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageBack handlePageBackClick={handlePageBackClick} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 2} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
+        </div>
+      );
+    // final case: currentPage === n
+    } else {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageBack handlePageBackClick={handlePageBackClick} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 3} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 2} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
+        </div>
+      );
+    }
   } else if (n === 2) {
     if (currentPage === 1) {
       pagesDisplayed = (
