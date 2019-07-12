@@ -135,10 +135,31 @@ const Pages = (props) => {
         </div>
       );
     }
+  } else if (n === 2) {
+    if (currentPage === 1) {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageButton handlePageClick={handlePageClick} pageValue={1} />
+          <PageButton handlePageClick={handlePageClick} pageValue={2} />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
+        </div>
+      );
+    // else currentPage === n
+    } else {
+      pagesDisplayed = (
+        <div className="pagesList">
+          <PageBack handlePageBackClick={handlePageBackClick} />
+          <PageButton handlePageClick={handlePageClick} pageValue={1} />
+          <PageButton handlePageClick={handlePageClick} pageValue={2} />
+        </div>
+      );
+    }
+  } else if (n === 1) {
+    pagesDisplayed = null;
   } else {
     pagesDisplayed = (
       <div>
-        <div>Todo for cases n less than 6 </div>
+        <div>Todo for cases n = 3, 4, and 5 </div>
       </div>
     );
   }
