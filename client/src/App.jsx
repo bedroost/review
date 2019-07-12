@@ -43,7 +43,6 @@ class App extends React.Component {
       });
   }
 
-
   handlePageClick(e) {
     console.log(e.target.innerText);
     const clickedPage = e.target.innerText;
@@ -82,7 +81,7 @@ class App extends React.Component {
         </div>
 
         <div>
-          <Pages handlePageClick={this.handlePageClick}/>
+          <Pages handlePageClick={this.handlePageClick} />
         </div>
 
       </div>

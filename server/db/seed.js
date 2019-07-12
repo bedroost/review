@@ -81,15 +81,17 @@ for (let i = 0; i < 100; i += 1) {
       review.text = random_reviewLength % 2 === 0 ? textShort : textLong;
       review.username = username;
       review.avatar = avatar;
+      review.hasResponse = true;
       review.response_username = response_username;
       review.response_avatar = response_avatar;
-      review.response_text = response_text;
       review.response_created_at = response_created_at;
+      review.response_text = response_text;
     } else {
       review.created_at = created_at;
       review.text = random_reviewLength % 2 === 0 ? textShort : textLong;
       review.username = username;
       review.avatar = avatar;
+      review.hasResponse = false;
     }
 
     // add the populated review object into the reviews array
