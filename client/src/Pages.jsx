@@ -120,7 +120,8 @@ const Pages = (props) => {
           <PageForward />
         </div>
       );
-    } else if (currentPage === n) {
+    // final case: currentPage === n
+    } else {
       pagesDisplayed = (
         <div className="pagesList">
           <PageBack />
@@ -129,12 +130,6 @@ const Pages = (props) => {
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 2} />
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
-        </div>
-      );
-    } else {
-      pagesDisplayed = (
-        <div>
-          <div>Todo</div>
         </div>
       );
     }
