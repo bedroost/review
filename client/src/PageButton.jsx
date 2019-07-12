@@ -3,14 +3,25 @@ import React from 'react';
 
 const PageButton = (props) => {
   const {
+    currentPage,
     handlePageClick,
     pageValue,
   } = props;
 
+
+  // toggle styling for button that reflects current page displayed
+  let activeClass;
+
+  if (currentPage === pageValue) {
+    activeClass = "buttonDivNum activePage";
+  } else {
+    activeClass = "buttonDivNum";
+  }
+
   return (
     <li>
       <button type="button" className="pagesButton numButton">
-        <div className="buttonDivNum" role="button" tabIndex="0" onClick={e => handlePageClick(e)}>{ pageValue }</div>
+        <div className={activeClass} role="button" tabIndex="0" onClick={e => handlePageClick(e)}>{ pageValue }</div>
       </button>
     </li>
   );

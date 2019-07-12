@@ -22,11 +22,11 @@ const Pages = (props) => {
     if (currentPage === 1) {
       pagesDisplayed = (
         <div className="pagesList">
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 2} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 2} />
           <li><div>...</div></li>
-          <PageButton handlePageClick={handlePageClick} pageValue={n} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
           <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
@@ -34,11 +34,11 @@ const Pages = (props) => {
       pagesDisplayed = (
         <div className="pagesList">
           <PageBack handlePageBackClick={handlePageBackClick} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 1} />
           <li><div>...</div></li>
-          <PageButton handlePageClick={handlePageClick} pageValue={n} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
           <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
@@ -46,12 +46,12 @@ const Pages = (props) => {
       pagesDisplayed = (
         <div className="pagesList">
           <PageBack handlePageBackClick={handlePageBackClick} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 2} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 2} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 1} />
           <li><div>...</div></li>
-          <PageButton handlePageClick={handlePageClick} pageValue={n} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
           <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
@@ -59,13 +59,13 @@ const Pages = (props) => {
       pagesDisplayed = (
         <div className="pagesList">
           <PageBack handlePageBackClick={handlePageBackClick} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 3} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 2} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 3} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 2} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 1} />
           <li><div>...</div></li>
-          <PageButton handlePageClick={handlePageClick} pageValue={n} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
           <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
@@ -73,13 +73,13 @@ const Pages = (props) => {
       pagesDisplayed = (
         <div className="pagesList">
           <PageBack handlePageBackClick={handlePageBackClick} />
-          <PageButton handlePageClick={handlePageClick} pageValue={1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <li><div>...</div></li>
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 1} />
           <li><div>...</div></li>
-          <PageButton handlePageClick={handlePageClick} pageValue={n} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
           <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
@@ -87,13 +87,13 @@ const Pages = (props) => {
       pagesDisplayed = (
         <div className="pagesList">
           <PageBack handlePageBackClick={handlePageBackClick} />
-          <PageButton handlePageClick={handlePageClick} pageValue={1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <li><div>...</div></li>
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 2} />
-          <PageButton handlePageClick={handlePageClick} pageValue={n} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 2} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
           <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
@@ -101,12 +101,12 @@ const Pages = (props) => {
       pagesDisplayed = (
         <div className="pagesList">
           <PageBack handlePageBackClick={handlePageBackClick} />
-          <PageButton handlePageClick={handlePageClick} pageValue={1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <li><div>...</div></li>
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
-          <PageButton handlePageClick={handlePageClick} pageValue={n} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
           <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
@@ -114,11 +114,11 @@ const Pages = (props) => {
       pagesDisplayed = (
         <div className="pagesList">
           <PageBack handlePageBackClick={handlePageBackClick} />
-          <PageButton handlePageClick={handlePageClick} pageValue={1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <li><div>...</div></li>
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
-          <PageButton handlePageClick={handlePageClick} pageValue={n} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
           <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
@@ -127,11 +127,11 @@ const Pages = (props) => {
       pagesDisplayed = (
         <div className="pagesList">
           <PageBack handlePageBackClick={handlePageBackClick} />
-          <PageButton handlePageClick={handlePageClick} pageValue={1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <li><div>...</div></li>
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 2} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
-          <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 2} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
         </div>
       );
     }
@@ -139,8 +139,8 @@ const Pages = (props) => {
     if (currentPage === 1) {
       pagesDisplayed = (
         <div className="pagesList">
-          <PageButton handlePageClick={handlePageClick} pageValue={1} />
-          <PageButton handlePageClick={handlePageClick} pageValue={2} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={2} />
           <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
@@ -149,8 +149,8 @@ const Pages = (props) => {
       pagesDisplayed = (
         <div className="pagesList">
           <PageBack handlePageBackClick={handlePageBackClick} />
-          <PageButton handlePageClick={handlePageClick} pageValue={1} />
-          <PageButton handlePageClick={handlePageClick} pageValue={2} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
+          <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={2} />
         </div>
       );
     }
