@@ -20,6 +20,7 @@ class App extends React.Component {
     this.sliceReviews = this.sliceReviews.bind(this);
     this.handlePageClick = this.handlePageClick.bind(this);
     this.handlePageBackClick = this.handlePageBackClick.bind(this);
+    this.handlePageForwardClick = this.handlePageForwardClick.bind(this);
   }
 
   componentDidMount() {
@@ -57,8 +58,15 @@ class App extends React.Component {
     }, () => this.sliceReviews());
   }
 
-  handlePageBackClick(e) {
+  handlePageBackClick() {
     const previousPage = this.state.currentPage - 1;
+    this.setState({
+      currentPage: previousPage,
+    });
+  }
+
+  handlePageForwardClick() {
+    const previousPage = this.state.currentPage + 1;
     this.setState({
       currentPage: previousPage,
     });

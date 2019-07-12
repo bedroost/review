@@ -10,6 +10,7 @@ const Pages = (props) => {
     currentPage,
     handlePageClick,
     handlePageBackClick,
+    handlePageForwardClick,
   } = props;
 
   const n = Math.ceil(totalReviews / 7);
@@ -26,7 +27,7 @@ const Pages = (props) => {
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 2} />
           <li><div>...</div></li>
           <PageButton handlePageClick={handlePageClick} pageValue={n} />
-          <PageForward />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
     } else if (currentPage === 2) {
@@ -38,7 +39,7 @@ const Pages = (props) => {
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
           <li><div>...</div></li>
           <PageButton handlePageClick={handlePageClick} pageValue={n} />
-          <PageForward />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
     } else if (currentPage === 3) {
@@ -51,7 +52,7 @@ const Pages = (props) => {
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
           <li><div>...</div></li>
           <PageButton handlePageClick={handlePageClick} pageValue={n} />
-          <PageForward />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
     } else if (currentPage === 4) {
@@ -65,7 +66,7 @@ const Pages = (props) => {
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
           <li><div>...</div></li>
           <PageButton handlePageClick={handlePageClick} pageValue={n} />
-          <PageForward />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
     } else if (currentPage > 4 && currentPage < (n - 3)) {
@@ -79,7 +80,7 @@ const Pages = (props) => {
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
           <li><div>...</div></li>
           <PageButton handlePageClick={handlePageClick} pageValue={n} />
-          <PageForward />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
     } else if (currentPage === (n - 3)) {
@@ -93,7 +94,7 @@ const Pages = (props) => {
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 2} />
           <PageButton handlePageClick={handlePageClick} pageValue={n} />
-          <PageForward />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
     } else if (currentPage === (n - 2)) {
@@ -106,7 +107,7 @@ const Pages = (props) => {
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage + 1} />
           <PageButton handlePageClick={handlePageClick} pageValue={n} />
-          <PageForward />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
     } else if (currentPage === (n - 1)) {
@@ -118,7 +119,7 @@ const Pages = (props) => {
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage - 1} />
           <PageButton handlePageClick={handlePageClick} pageValue={currentPage} />
           <PageButton handlePageClick={handlePageClick} pageValue={n} />
-          <PageForward />
+          <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
     // final case: currentPage === n
