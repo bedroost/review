@@ -5,7 +5,7 @@ const PageBack = props => (
   <div>
     <li>
       <button type="button" className="pagesButton">
-        <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageClick(e)}>
+        <div className="buttonDiv" role="button" tabIndex="0" onClick={e => props.handlePageBackClick(e)}>
           <i className="material-icons">navigate_before</i>
         </div>
       </button>

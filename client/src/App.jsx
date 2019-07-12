@@ -17,8 +17,9 @@ class App extends React.Component {
       ratings: {},
     };
     this.getData = this.getData.bind(this);
-    this.handlePageClick = this.handlePageClick.bind(this);
     this.sliceReviews = this.sliceReviews.bind(this);
+    this.handlePageClick = this.handlePageClick.bind(this);
+    this.handlePageBackClick = this.handlePageBackClick.bind(this);
   }
 
   componentDidMount() {
@@ -42,6 +43,12 @@ class App extends React.Component {
       });
   }
 
+  sliceReviews() {
+    this.setState({
+      displayedReviews: this.state.allReviews.slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
+    });
+  }
+
   handlePageClick(e) {
     console.log(e.target.innerText);
     const clickedPage = Number(e.target.innerText);
@@ -50,9 +57,10 @@ class App extends React.Component {
     }, () => this.sliceReviews());
   }
 
-  sliceReviews() {
+  handlePageBackClick(e) {
+    const previousPage = this.state.currentPage - 1;
     this.setState({
-      displayedReviews: this.state.allReviews.slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
+      currentPage: previousPage,
     });
   }
 
@@ -90,6 +98,7 @@ class App extends React.Component {
             currentPage={currentPage}
             totalReviews={totalReviews}
             handlePageClick={this.handlePageClick}
+            handlePageBackClick={this.handlePageBackClick}
           />
         </div>
 
