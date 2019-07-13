@@ -13,6 +13,7 @@ const RatingsLocation = props => (
       <span className="fas fa-star"></span>
       <span className="fas fa-star"></span>
       <span className="fas fa-star"></span>
+      <span className="fas fa-star"></span>
     </div>
 
   </div>
