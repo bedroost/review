@@ -35,19 +35,19 @@ describe('<App /> rendering', () => {
     expect(wrapper.find(Pages)).toHaveLength(1);
   });
 
-  it('should have an inital state currentPage default to 1', () => {
+  it('should have an initial state currentPage default to 1', () => {
     expect(wrapper.state('currentPage')).toEqual(1);
   });
 
-  it('should have an inital state allReviews default to empty array', () => {
+  it('should have an initial state allReviews default to empty array', () => {
     expect(wrapper.state('allReviews')).toBeInstanceOf(Array);
   });
 
-  it('should have an inital state displayedReviews default to empty array', () => {
+  it('should have an initial state displayedReviews default to empty array', () => {
     expect(wrapper.state('displayedReviews')).toBeInstanceOf(Array);
   });
 
-  it('should have an inital state ratings default to empty object', () => {
+  it('should have an initial state ratings default to empty object', () => {
     expect(wrapper.state('ratings')).toBeInstanceOf(Object);
   });
 });
@@ -57,6 +57,10 @@ Add tests below when jest mock axios is available
 */
 
 // jest.mock('axios');
+// it('should have an inital state totalReviews default to null', () => {
+//   expect(wrapper.state('totalReviews')).toBeNull();
+// });
+//
 // describe('<ReviewList /> rendering', () => {
 //   it('should render without throwing an error', () => {
 //     const wrapper = shallow(<ReviewList />);
