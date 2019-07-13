@@ -1,10 +1,9 @@
 body {
   margin: 0px;
   word-wrap: break-word;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-family: Circular, -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0.0156em;
   line-height: 1.375em;
   color: #484848;
   -webkit-font-smoothing: antialiased;
