@@ -19,7 +19,7 @@ const PageButton = (props) => {
   }
 
   return (
-    <li>
+    <li className="pageList">
       <button type="button" className="pagesButton numButton">
         <div className={activeClass} role="button" tabIndex="0" onClick={e => handlePageClick(e)}>{ pageValue }</div>
       </button>

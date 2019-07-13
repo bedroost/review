@@ -6,7 +6,7 @@ const PageForward = (props) => {
 
   return (
     <div>
-      <li>
+      <li className="pageListForward">
         <button type="button" className="pagesButton navButton">
           <div className="buttonDivNav" role="button" tabIndex="0" onClick={() => handlePageForwardClick()}>
             <i className="material-icons">navigate_next</i>

@@ -6,7 +6,7 @@ const PageBack = (props) => {
 
   return (
     <div>
-      <li>
+      <li className="pageListBack">
         <button type="button" className="pagesButton navButton">
           <div className="buttonDivNav" role="button" tabIndex="0" onClick={() => handlePageBackClick()}>
             <i className="material-icons">navigate_before</i>
