@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Search = () => (
-  <div className="searchContainer">
+  <div className="spyglass-searchInput">
 
     <div className="spyglass">
       <i className="material-icons">search</i>

@@ -8,7 +8,8 @@ body {
   line-height: 1.375em;
   color: #484848;
   -webkit-font-smoothing: antialiased;
-  max-width: 650px;
+  width: 594px;
+  max-width: 648px;
   margin-left: 24px;
   margin-right: 24px;
 }
@@ -67,40 +68,58 @@ h2 {
 }
 
 /* SEARCH */
-.searchContainer {
+.search-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.spyglass-searchInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid #EBEBEB;
+  border-radius: 3px;
+}
+
 .spyglass {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+}
+
+.material-icons {
   color: #484848;
   height: 1em;
   width: 1em;
-  display: block;
-  margin-right: 10px;
+  font-size: 18px;
 }
 
 input[type=text] {
   font-size: 14px;
   line-height: 22px;
-  border-radius: 3px;
   -webkit-appearance: none;
   -moz-appearance: none;
-  opacity: 50%;
   padding-top: 6px;
   padding-bottom: 6px;
-  color:  #484848;
+  color: #484848;
   font-weight: 600;
   padding-left: 7px;
   padding-right: 7px;
-  border: 0.5px solid #EBEBEB;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 input[type=text]:focus {
-  background: #fff;
-	border: 1px solid #008489;
-  outline: #484848;
+  /* background: #fff; */
+	/* border: 1px solid #008489; */
+  /* outline: none; */
 }
 
 /* RATINGS */
