@@ -129,6 +129,7 @@ class App extends React.Component {
           <Pages
             currentPage={currentPage}
             totalReviews={totalReviews}
+            searchedReviews={searchedReviews}
             handlePageClick={this.handlePageClick}
             handlePageBackClick={this.handlePageBackClick}
             handlePageForwardClick={this.handlePageForwardClick}
