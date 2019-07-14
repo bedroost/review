@@ -1,22 +1,41 @@
 import React from 'react';
 
-const RatingsCleanliness = props => (
-  <div className="category-stars">
+const RatingsCleanliness = (props) => {
+  const {
+    cleanliness,
+  } = props;
 
-    <div>
-      <span>Cleanliness</span>
+  const widthPercentage = (cleanliness / 5) * 100;
+
+  return (
+    <div className="category-stars">
+
+      <div className="category">
+        <span>Cleanliness</span>
+      </div>
+
+      <div className="stars-container">
+        <div className="stars">
+          <div className="stars-top" style={{ width: `${widthPercentage}%` }}>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+
+          <div className="stars-bottom">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+        </div>
+      </div>
     </div>
+  );
 
-    <div className="stars">
-      { /* <span>{props.cleanliness}</span> */ }
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-    </div>
-
-  </div>
-);
+};
 
 export default RatingsCleanliness;
