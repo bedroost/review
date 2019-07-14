@@ -15,12 +15,16 @@ class App extends React.Component {
       displayedReviews: [],
       currentPage: 1,
       ratings: {},
+      search: '',
+      searchedReviews: null,
     };
     this.getData = this.getData.bind(this);
     this.sliceReviews = this.sliceReviews.bind(this);
     this.handlePageClick = this.handlePageClick.bind(this);
     this.handlePageBackClick = this.handlePageBackClick.bind(this);
     this.handlePageForwardClick = this.handlePageForwardClick.bind(this);
+    this.handleSearchInput = this.handleSearchInput.bind(this);
+    this.handleEnterPress = this.handleEnterPress.bind(this);
   }
 
   componentDidMount() {
@@ -72,12 +76,32 @@ class App extends React.Component {
     }, () => this.sliceReviews());
   }
 
+  handleSearchInput(e) {
+    this.setState({
+      search: e.target.value,
+    });
+  }
+
+  handleEnterPress(e) {
+    if (event.key === 'Enter') {
+      const search = this.state.search;
+      const allReviews = this.state.allReviews;
+      const searchedReviews = allReviews.filter((review) => {
+        return review.text.toLowerCase().includes(search.toLowerCase());
+      });
+      this.setState({
+        searchedReviews,
+      });
+    }
+  }
+
   render() {
     const {
       totalReviews,
       displayedReviews,
       ratings,
       currentPage,
+      searchedReviews,
     } = this.state;
 
     return (
@@ -89,7 +113,7 @@ class App extends React.Component {
               <Total totalReviews={totalReviews} ratings={ratings} />
             </div>
             <div className="search-container">
-              <Search />
+              <Search handleSearchInput={this.handleSearchInput} handleEnterPress={this.handleEnterPress} />
             </div>
           </div>
         </div>
@@ -98,7 +122,7 @@ class App extends React.Component {
 
         <div className="details">
           <Ratings ratings={ratings} />
-          <ReviewList displayedReviews={displayedReviews} />
+          <ReviewList displayedReviews={searchedReviews || displayedReviews} />
         </div>
 
         <div>
@@ -108,7 +132,6 @@ class App extends React.Component {
             handlePageClick={this.handlePageClick}
             handlePageBackClick={this.handlePageBackClick}
             handlePageForwardClick={this.handlePageForwardClick}
-
           />
         </div>
 
