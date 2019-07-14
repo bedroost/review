@@ -37,13 +37,13 @@ ul {
   width: 70%;
 }
 
-.total-stars {
+.totalReviews-totalStars {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.total-count-reviews {
+.totalReviews {
   font-size: 24px;
   font-weight: 725;
   line-height: 1.25em;
@@ -57,10 +57,42 @@ h2 {
   margin-bottom: 5px;
 }
 
-.totalOverallStars {
-  margin-left: 16px;
+.totalStars-container {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
+  width: 50%;
+  position: relative;
+}
+
+.totalStars {
+  color: #EBEBEB;
+  font-size: 22px;
+  min-height: 1px;
+  position: relative;
+  padding: 0;
+}
+
+.totalStars .totalStars-top {
   color: #008489;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
   display: inline-block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.totalStars .totalStars-bottom {
+  display: inline-block;
+  z-index: 0;
+  padding: 0;
+}
+
+.totalStars span {
+  margin: 2px;
 }
 
 .summary-border-bottom {
@@ -150,9 +182,41 @@ input[type=text]:focus {
   margin-bottom: 12px;
 }
 
+.stars-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  position: relative;
+}
+
 .stars {
+  color: #EBEBEB;
+  font-size: 18px;
+  min-height: 1px;
+  position: relative;
+  padding: 0;
+}
+
+.stars .stars-top {
   color: #008489;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
   display: inline-block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.stars .stars-bottom {
+  display: inline-block;
+  z-index: 0;
+  padding: 0;
+}
+
+.stars span {
+  margin: 2px;
 }
 
 /* REVIEW LIST */

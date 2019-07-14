@@ -1,22 +1,40 @@
 import React from 'react';
 
-const RatingsCommunication = props => (
-  <div className="category-stars">
+const RatingsCommunication = (props) => {
+  const {
+    communication,
+  } = props;
 
-    <div>
-      <span>Communication</span>
+  const widthPercentage = (communication / 5) * 100;
+
+  return (
+    <div className="category-stars">
+
+      <div className="category">
+        <span>Communication</span>
+      </div>
+
+      <div className="stars-container">
+        <div className="stars">
+          <div className="stars-top" style={{ width: `${widthPercentage}%` }}>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+
+          <div className="stars-bottom">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div className="stars">
-      { /* <span>{props.communication}</span> */ }
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-    </div>
-
-  </div>
-);
+  );
+};
 
 export default RatingsCommunication;

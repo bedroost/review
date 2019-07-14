@@ -1,22 +1,41 @@
 import React from 'react';
 
-const RatingsAccuracy = props => (
-  <div className="category-stars">
+const RatingsAccuracy = (props) => {
+  const {
+    accuracy,
+  } = props;
 
-    <div>
-      <span>Accuracy</span>
+  const widthPercentage = (accuracy / 5) * 100;
+
+  return (
+    <div className="category-stars">
+
+      <div className="category">
+        <span>Accuracy</span>
+      </div>
+
+      <div className="stars-container">
+        <div className="stars">
+          <div className="stars-top" style={{ width: `${widthPercentage}%` }}>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+
+          <div className="stars-bottom">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <div className="stars">
-      { /* <span>{props.accuracy}</span> */ }
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-    </div>
-
-  </div>
-);
+  );
+};
 
 export default RatingsAccuracy;

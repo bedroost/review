@@ -1,27 +1,36 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import RatingsWellLeft from './RatingsWellLeft';
 import RatingsWellRight from './RatingsWellRight';
 
-const Ratings = props => (
-  <div className="ratings-container">
+const Ratings = (props) => {
+  const {
+    ratings: {
+      communication, accuracy, cleanliness, location, check_in, value,
+    },
+  } = props;
 
-    <div id="left" className="well">
-      <RatingsWellLeft
-        accuracy={props.ratings.accuracy}
-        communication={props.ratings.communication}
-        cleanliness={props.ratings.cleanliness}
-      />
+  return (
+    <div className="ratings-container">
+
+      <div id="left" className="well">
+        <RatingsWellLeft
+          accuracy={accuracy}
+          communication={communication}
+          cleanliness={cleanliness}
+        />
+      </div>
+
+      <div id="right" className="well">
+        <RatingsWellRight
+          location={location}
+          check_in={check_in}
+          value={value}
+        />
+      </div>
+
     </div>
-
-    <div id="right" className="well">
-      <RatingsWellRight
-        location={props.ratings.location}
-        check_in={props.ratings.check_in}
-        value={props.ratings.value}
-      />
-    </div>
-
-  </div>
-);
+  );
+};
 
 export default Ratings;

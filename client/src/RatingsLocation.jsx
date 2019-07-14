@@ -1,22 +1,41 @@
 import React from 'react';
 
-const RatingsLocation = props => (
-  <div className="category-stars">
+const RatingsLocation = (props) => {
+  const {
+    location,
+  } = props;
 
-    <div>
-      <span>Location</span>
+  const widthPercentage = (location / 5) * 100;
+
+  return (
+    <div className="category-stars">
+
+      <div className="category">
+        <span>Location</span>
+      </div>
+
+      <div className="stars-container">
+        <div className="stars">
+          <div className="stars-top" style={{ width: `${widthPercentage}%` }}>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+
+          <div className="stars-bottom">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <div className="stars">
-      { /* <span>{props.location}</span> */ }
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-    </div>
-
-  </div>
-);
+  );
+};
 
 export default RatingsLocation;

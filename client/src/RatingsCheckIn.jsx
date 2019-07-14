@@ -1,22 +1,42 @@
+/* eslint-disable camelcase */
 import React from 'react';
 
-const RatingsCheckIn = props => (
-  <div className="category-stars">
+const RatingsCheckIn = (props) => {
+  const {
+    check_in,
+  } = props;
 
-    <div>
-      <span>Check-in</span>
+  const widthPercentage = (check_in / 5) * 100;
+
+  return (
+    <div className="category-stars">
+
+      <div className="category">
+        <span>Check-in</span>
+      </div>
+
+      <div className="stars-container">
+        <div className="stars">
+          <div className="stars-top" style={{ width: `${widthPercentage}%` }}>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+
+          <div className="stars-bottom">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <div className="stars">
-      { /* <span>{props.check_in}</span> */ }
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-    </div>
-
-  </div>
-);
+  );
+};
 
 export default RatingsCheckIn;
