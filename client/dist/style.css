@@ -151,8 +151,32 @@ input[type=text]:focus {
 }
 
 .stars {
+  color: #EBEBEB;
+  font-size: 16px;
+  min-height: 1px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  width: 50%;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.stars .stars-top {
   color: #008489;
-  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  display: block;
+  top: 0;
+  left: 0;
+  padding-left: 8px;
+}
+
+.stars .stars-bottom {
+  display: block;
+  z-index: 0;
+  padding: 0;
 }
 
 /* REVIEW LIST */
