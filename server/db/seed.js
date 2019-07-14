@@ -26,14 +26,15 @@ for (let i = 0; i < 100; i += 1) {
   // use faker to make random values to assign to schema keys:
   // each listing will have same ratings, response_username, response_avatar
   // each listing will have variance in reviews array
+  // use Math.round(num / 0.5) * 0.5 to give review value rounded to nearest .0 or .5
   const numReviews = faker.random.number({ min: 5, max: 200 });
   console.log(`Listing index ${i} has ${numReviews} reviews`);
-  const accuracy = faker.random.number({ min: 1, max: 5 });
-  const communication = faker.random.number({ min: 1, max: 5 });
-  const cleanliness = faker.random.number({ min: 1, max: 5 });
-  const location = faker.random.number({ min: 1, max: 5 });
-  const check_in = faker.random.number({ min: 1, max: 5 });
-  const value = faker.random.number({ min: 1, max: 5 });
+  const accuracy = Math.round(faker.finance.amount(3, 5, 1) / 0.5) * 0.5;
+  const communication = Math.round(faker.finance.amount(3, 5, 1) / 0.5) * 0.5;
+  const cleanliness = Math.round(faker.finance.amount(3, 5, 1) / 0.5) * 0.5;
+  const location = Math.round(faker.finance.amount(3, 5, 1) / 0.5) * 0.5;
+  const check_in = Math.round(faker.finance.amount(3, 5, 1) / 0.5) * 0.5;
+  const value = Math.round(faker.finance.amount(3, 5, 1) / 0.5) * 0.5;
   const overall = Math.round((accuracy + communication + cleanliness + location + check_in + value) / 6);
   const response_username = faker.name.firstName();
   const response_avatar = faker.internet.avatar();
