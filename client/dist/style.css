@@ -150,31 +150,38 @@ input[type=text]:focus {
   margin-bottom: 12px;
 }
 
+.stars-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 50%;
+  position: relative;
+}
+
 .stars {
   color: #EBEBEB;
   font-size: 16px;
   min-height: 1px;
-  display: flex;
-  align-items: flex-end;
+  margin: 0 auto;
   position: relative;
-  width: 50%;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 0;
 }
 
 .stars .stars-top {
   color: #008489;
+  padding: 0;
   position: absolute;
   z-index: 1;
-  overflow: hidden;
-  display: block;
+  display: inline-block;
   top: 0;
   left: 0;
-  padding-left: 8px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .stars .stars-bottom {
-  display: block;
+  display: inline-block;
   z-index: 0;
   padding: 0;
 }

@@ -7,27 +7,23 @@ const RatingsAccuracy = () => (
       <span>Accuracy</span>
     </div>
 
-    <div className="stars" style={{ width: '100%' }}>
-      { /* <span>{props.accuracy}</span> */ }
-      { /* <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span> */ }
-      <div className="stars-top">
-        <span>★</span>
-        <span>★</span>
-        <span>★</span>
-        <span>★</span>
-        <span>★</span>
-      </div>
+    <div className="stars-container">
+      <div className="stars">
+        <div className="stars-top" style={{ width: '50%' }}>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+        </div>
 
-      <div className="stars-bottom">
-        <span>★</span>
-        <span>★</span>
-        <span>★</span>
-        <span>★</span>
-        <span>★</span>
+        <div className="stars-bottom">
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+        </div>
       </div>
     </div>
 
