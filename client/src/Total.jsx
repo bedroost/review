@@ -8,7 +8,6 @@ const Total = (props) => {
 
   const widthPercentage = (overall / 5) * 100;
 
-  console.log(widthPercentage);
   return (
     <div className="totalReviews-totalStars">
 
