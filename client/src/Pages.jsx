@@ -8,7 +8,7 @@ const Pages = (props) => {
   const {
     totalReviews,
     currentPage,
-    searchedReviews,
+    allSearchedReviews,
     handlePageClick,
     handlePageBackClick,
     handlePageForwardClick,
@@ -18,8 +18,8 @@ const Pages = (props) => {
   let pagesDisplayed;
 
   // page count for either "all reviews" or if reviews have been "searched"
-  if (searchedReviews) {
-    n = Math.ceil(searchedReviews.length / 7);
+  if (allSearchedReviews) {
+    n = Math.ceil(allSearchedReviews.length / 7);
   } else {
     n = Math.ceil(totalReviews / 7);
   }

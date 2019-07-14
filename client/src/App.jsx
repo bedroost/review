@@ -12,14 +12,15 @@ class App extends React.Component {
     this.state = {
       totalReviews: null,
       allReviews: [],
+      allSearchedReviews: null,
       displayedReviews: [],
       currentPage: 1,
       ratings: {},
       search: '',
-      searchedReviews: null,
     };
     this.getData = this.getData.bind(this);
     this.sliceReviews = this.sliceReviews.bind(this);
+    this.switchFromAllToSearched = this.switchFromAllToSearched.bind(this);
     this.handlePageClick = this.handlePageClick.bind(this);
     this.handlePageBackClick = this.handlePageBackClick.bind(this);
     this.handlePageForwardClick = this.handlePageForwardClick.bind(this);
@@ -49,8 +50,23 @@ class App extends React.Component {
   }
 
   sliceReviews() {
+    console.log(this.state.allSearchedReviews.length)
+    if (this.state.allSearchedReviews.length > 0) {
+      console.log('slicing searchedReviews');
+      this.setState({
+        displayedReviews: this.state.allSearchedReviews.slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
+      });
+    } else {
+      console.log('slicing allReviews')
+      this.setState({
+        displayedReviews: this.state.allReviews.slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
+      });
+    }
+  }
+
+  switchFromAllToSearched() {
     this.setState({
-      displayedReviews: this.state.allReviews.slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
+      displayedReviews: this.state.allSearchedReviews.slice(0, 7),
     });
   }
 
@@ -83,15 +99,15 @@ class App extends React.Component {
   }
 
   handleEnterPress(e) {
-    if (event.key === 'Enter') {
+    if (e.key === 'Enter') {
       const search = this.state.search;
       const allReviews = this.state.allReviews;
       const searchedReviews = allReviews.filter((review) => {
         return review.text.toLowerCase().includes(search.toLowerCase());
       });
       this.setState({
-        searchedReviews,
-      });
+        allSearchedReviews: searchedReviews,
+      }, () => this.switchFromAllToSearched());
     }
   }
 
@@ -101,7 +117,7 @@ class App extends React.Component {
       displayedReviews,
       ratings,
       currentPage,
-      searchedReviews,
+      allSearchedReviews,
     } = this.state;
 
     return (
@@ -122,14 +138,14 @@ class App extends React.Component {
 
         <div className="details">
           <Ratings ratings={ratings} />
-          <ReviewList displayedReviews={searchedReviews || displayedReviews} />
+          <ReviewList displayedReviews={displayedReviews} />
         </div>
 
         <div>
           <Pages
             currentPage={currentPage}
             totalReviews={totalReviews}
-            searchedReviews={searchedReviews}
+            allSearchedReviews={allSearchedReviews}
             handlePageClick={this.handlePageClick}
             handlePageBackClick={this.handlePageBackClick}
             handlePageForwardClick={this.handlePageForwardClick}
