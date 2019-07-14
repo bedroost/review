@@ -1,22 +1,43 @@
 import React from 'react';
 
-const Total = props => (
-  <div className="total-stars">
+const Total = (props) => {
+  const {
+    ratings: { overall },
+    totalReviews,
+  } = props;
 
-    <div className="total-count-reviews">
-      <h2>{`${props.totalReviews} Reviews`}</h2>
+  const widthPercentage = (overall / 5) * 100;
+
+  console.log(widthPercentage);
+  return (
+    <div className="totalReviews-totalStars">
+
+      <div className="totalReviews">
+        <h2>{`${totalReviews} Reviews`}</h2>
+      </div>
+
+      <div className="totalStars-container">
+        <div className="totalStars">
+          <div className="totalStars-top" style={{ width: `${widthPercentage}%` }}>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+
+          <div className="totalStars-bottom">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <div className="totalOverallStars">
-      { /* <span className="totalOverallStars">{props.ratings.overall}</span> */ }
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-      <span className="fas fa-star"></span>
-    </div>
-
-  </div>
-);
+  );
+};
 
 export default Total;
