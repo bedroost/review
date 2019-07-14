@@ -50,14 +50,11 @@ class App extends React.Component {
   }
 
   sliceReviews() {
-    console.log(this.state.allSearchedReviews.length)
     if (this.state.allSearchedReviews.length > 0) {
-      console.log('slicing searchedReviews');
       this.setState({
         displayedReviews: this.state.allSearchedReviews.slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
       });
     } else {
-      console.log('slicing allReviews')
       this.setState({
         displayedReviews: this.state.allReviews.slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
       });

@@ -280,7 +280,6 @@ const Pages = (props) => {
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n - 2} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n - 1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
-          <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
     }
