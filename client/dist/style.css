@@ -219,6 +219,33 @@ input[type=text]:focus {
   margin: 2px;
 }
 
+/* SEARCH RESULTS BAR */
+.searchResults-showAllReviews {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.searchTerm {
+  font-weight: 600;
+}
+
+.showAllReviewsButton {
+  color: #008489;
+  background: transparent;
+  font: inherit;
+  border: 0px;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  text-align: left;
+}
+
 /* REVIEW LIST */
 .reviewList-container {
   margin-top: 16px;

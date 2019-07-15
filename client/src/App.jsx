@@ -5,6 +5,7 @@ import Ratings from './Ratings';
 import Total from './Total';
 import Search from './Search';
 import Pages from './Pages';
+import SearchResults from './SearchResults';
 
 class App extends React.Component {
   constructor(props) {
@@ -135,6 +136,7 @@ class App extends React.Component {
 
         <div className="details">
           <Ratings ratings={ratings} />
+          <SearchResults />
           <ReviewList displayedReviews={displayedReviews} />
         </div>
 
