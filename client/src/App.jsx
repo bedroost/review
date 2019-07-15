@@ -11,7 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalReviews: null,
+      totalReviews: 0,
       allReviews: [],
       allSearchedReviews: null,
       displayedReviews: [],
