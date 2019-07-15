@@ -194,29 +194,6 @@ input[type=text] {
   visibility: visible;
 }
 
-/* CLEAR BUTTON, X SHAPE */
-.close {
-  position: relative;
-  display: inline-block;
-  opacity: 0.5;
-  z-index: 1;
-}
-
-.close:before, .close:after {
-  position: relative;
-  left: 8px;
-  content: ' ';
-  height: 20px;
-  width: 1px;
-  background-color: #484848;
-}
-.close:before {
-  transform: rotate(45deg);
-}
-.close:after {
-  transform: rotate(-45deg);
-}
-
 /* RATINGS */
 .details {
   max-width: 100%;
