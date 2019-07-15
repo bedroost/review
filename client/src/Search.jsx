@@ -8,7 +8,7 @@ const Search = (props) => {
   } = props;
 
   return (
-    <div className="spyglass-searchInput">
+    <div className="spyglass-searchInput-clearButton">
 
       <div className="spyglass">
         <i className="material-icons">search</i>

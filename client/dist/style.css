@@ -108,7 +108,7 @@ h2 {
   justify-content: center;
 }
 
-.spyglass-searchInput {
+.spyglass-searchInput-clearButton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,7 +117,7 @@ h2 {
   position: relative;
 }
 
-.spyglass-searchInput:focus-within {
+.spyglass-searchInput-clearButton:focus-within {
 	border: 1px solid #008489;
 }
 
@@ -186,7 +186,7 @@ input[type=text] {
   text-decoration: none;
 }
 
-.spyglass-searchInput:focus-within .clearButton {
+.searchInput:focus-within .clearButton {
   visibility: visible;
 }
 
