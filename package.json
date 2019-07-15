@@ -2,12 +2,13 @@
   "name": "review",
   "version": "1.0.0",
   "description": "This microservice will display user reviews and star ratings for a given listing",
+  "author": "Cassandra",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "coverage": "jest --collect-coverage",
     "build": "webpack",
-    "dev-start": "nodemon server/index.js",
+    "start": "nodemon server/index.js",
     "seed": "node server/db/seed.js"
   },
   "repository": {
@@ -15,7 +16,6 @@
     "url": "git+https://github.com/bedroost/review.git"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bedroost/review/issues"

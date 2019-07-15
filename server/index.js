@@ -22,7 +22,6 @@ app.get('/rooms/:listingid', (req, res) => {
   });
 });
 
-
 app.get('/api/:listingid/reviews', (req, res) => {
   console.log('req.params: ', req.params);
   console.log('req.params.listingid', req.params.listingid);
@@ -40,5 +39,5 @@ app.get('/api/:listingid/reviews', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Express listening on port ${port}`);
+  console.log(`reviews-express listening on port ${port}`);
 });
