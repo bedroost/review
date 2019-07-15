@@ -1,3 +1,5 @@
+const style = require('style-loader');
+const css = require('css-loader');
 const path = require('path');
 
 module.exports = {
@@ -18,10 +20,20 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        loader: 'css-loader',
-        options: {
-          modules: true,
-        },
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                mode: 'local',
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+              },
+              import: true,
+              importLoaders: true,
+            },
+          },
+        ],
       },
     ],
   },

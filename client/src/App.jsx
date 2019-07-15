@@ -6,6 +6,7 @@ import Total from './Total';
 import Search from './Search';
 import Pages from './Pages';
 import SearchResults from './SearchResults';
+import styles from '../dist/style.css';
 
 class App extends React.Component {
   constructor(props) {
