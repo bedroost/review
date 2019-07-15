@@ -26,7 +26,7 @@ const Search = (props) => {
         />
         <div className="clearDiv">
           <button type="button" className="clearButton" onClick={() => handleBackToAllReviews()}>
-            <div>X</div>
+            <div>✕</div>
           </button>
         </div>
       </div>
