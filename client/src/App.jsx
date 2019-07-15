@@ -27,6 +27,7 @@ class App extends React.Component {
     this.handlePageForwardClick = this.handlePageForwardClick.bind(this);
     this.handleSearchInput = this.handleSearchInput.bind(this);
     this.handleEnterPress = this.handleEnterPress.bind(this);
+    this.handleBackToAllReviews = this.handleBackToAllReviews.bind(this);
   }
 
   componentDidMount() {
@@ -109,6 +110,14 @@ class App extends React.Component {
     }
   }
 
+  handleBackToAllReviews() {
+    this.setState({
+      displayedReviews: this.state.allReviews.slice(0, 7),
+      allSearchedReviews: null,
+      search: '',
+    });
+  }
+
   render() {
     const {
       totalReviews,
@@ -116,6 +125,7 @@ class App extends React.Component {
       ratings,
       currentPage,
       allSearchedReviews,
+      search
     } = this.state;
 
     return (
@@ -135,8 +145,11 @@ class App extends React.Component {
         <div className="summary-border-bottom" />
 
         <div className="details">
-          <Ratings ratings={ratings} />
-          <SearchResults />
+          {
+            allSearchedReviews
+              ? <SearchResults allSearchedReviews={allSearchedReviews} handleBackToAllReviews={this.handleBackToAllReviews} search={search} />
+              : <Ratings ratings={ratings} />
+          }
           <ReviewList displayedReviews={displayedReviews} />
         </div>
 
