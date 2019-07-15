@@ -150,6 +150,7 @@ class App extends React.Component {
                 handleSearchInput={this.handleSearchInput}
                 handleEnterPress={this.handleEnterPress}
                 search={search}
+                handleBackToAllReviews={this.handleBackToAllReviews}
               />
             </div>
           </div>

@@ -5,6 +5,7 @@ const Search = (props) => {
     handleSearchInput,
     handleEnterPress,
     search,
+    handleBackToAllReviews
   } = props;
 
   return (
@@ -24,7 +25,7 @@ const Search = (props) => {
           onKeyPress={e => handleEnterPress(e)}
         />
         <div className="clearDiv">
-          <button type="button" className="clearButton">
+          <button type="button" className="clearButton" onClick={() => handleBackToAllReviews()}>
             <div>X</div>
           </button>
         </div>
