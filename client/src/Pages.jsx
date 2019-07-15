@@ -8,13 +8,21 @@ const Pages = (props) => {
   const {
     totalReviews,
     currentPage,
+    allSearchedReviews,
     handlePageClick,
     handlePageBackClick,
     handlePageForwardClick,
   } = props;
 
-  const n = Math.ceil(totalReviews / 7);
+  let n;
   let pagesDisplayed;
+
+  // page count for either "all reviews" or if reviews have been "searched"
+  if (allSearchedReviews) {
+    n = Math.ceil(allSearchedReviews.length / 7);
+  } else {
+    n = Math.ceil(totalReviews / 7);
+  }
 
   // page buttons will render depending on:
   // max number of pages and current page state
@@ -272,7 +280,6 @@ const Pages = (props) => {
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n - 2} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n - 1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
-          <PageForward handlePageForwardClick={handlePageForwardClick} />
         </div>
       );
     }
