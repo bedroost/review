@@ -125,7 +125,7 @@ class App extends React.Component {
       ratings,
       currentPage,
       allSearchedReviews,
-      search
+      search,
     } = this.state;
 
     return (
@@ -137,7 +137,11 @@ class App extends React.Component {
               <Total totalReviews={totalReviews} ratings={ratings} />
             </div>
             <div className="search-container">
-              <Search handleSearchInput={this.handleSearchInput} handleEnterPress={this.handleEnterPress} search={search} />
+              <Search
+                handleSearchInput={this.handleSearchInput}
+                handleEnterPress={this.handleEnterPress}
+                search={search}
+              />
             </div>
           </div>
         </div>
@@ -147,7 +151,13 @@ class App extends React.Component {
         <div className="details">
           {
             allSearchedReviews
-              ? <SearchResults allSearchedReviews={allSearchedReviews} handleBackToAllReviews={this.handleBackToAllReviews} search={search} />
+              ? (
+                <SearchResults
+                  allSearchedReviews={allSearchedReviews}
+                  handleBackToAllReviews={this.handleBackToAllReviews}
+                  search={search}
+                />
+              )
               : <Ratings ratings={ratings} />
           }
           <ReviewList displayedReviews={displayedReviews} />

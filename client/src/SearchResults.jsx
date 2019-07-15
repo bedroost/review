@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 
@@ -20,7 +21,13 @@ const SearchResults = (props) => {
           {`"`}
         </div>
         <div className="showAllReviews">
-          <button type="button" className="showAllReviewsButton" onClick={() => handleBackToAllReviews()}>Back to all reviews</button>
+          <button
+            type="button"
+            className="showAllReviewsButton"
+            onClick={() => handleBackToAllReviews()}
+          >
+          Back to all reviews
+          </button>
         </div>
       </div>
 
