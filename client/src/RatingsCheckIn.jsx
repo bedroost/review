@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react';
+import styles from '../dist/style.css';
 
 const RatingsCheckIn = (props) => {
   const {
@@ -9,15 +10,15 @@ const RatingsCheckIn = (props) => {
   const widthPercentage = (check_in / 5) * 100;
 
   return (
-    <div className="category-stars">
+    <div className={styles.categoryStars}>
 
-      <div className="category">
+      <div className={styles.category}>
         <span>Check-in</span>
       </div>
 
-      <div className="stars-container">
-        <div className="stars">
-          <div className="stars-top" style={{ width: `${widthPercentage}%` }}>
+      <div className={styles.starsContainer}>
+        <div className={styles.stars}>
+          <div className={styles.starsTop} style={{ width: `${widthPercentage}%` }}>
             <span>★</span>
             <span>★</span>
             <span>★</span>
@@ -25,7 +26,7 @@ const RatingsCheckIn = (props) => {
             <span>★</span>
           </div>
 
-          <div className="stars-bottom">
+          <div className={styles.starsBottom}>
             <span>★</span>
             <span>★</span>
             <span>★</span>

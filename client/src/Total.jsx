@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../dist/style.css';
 
 const Total = (props) => {
   const {
@@ -9,15 +10,15 @@ const Total = (props) => {
   const widthPercentage = (overall / 5) * 100;
 
   return (
-    <div className="totalReviews-totalStars">
+    <div className={styles.totalReviewsTotalStars}>
 
-      <div className="totalReviews">
+      <div className={styles.totalReviews}>
         <h2>{`${totalReviews} Reviews`}</h2>
       </div>
 
-      <div className="totalStars-container">
-        <div className="totalStars">
-          <div className="totalStars-top" style={{ width: `${widthPercentage}%` }}>
+      <div className={styles.totalStarsContainer}>
+        <div className={styles.totalStars}>
+          <div className={styles.totalStarsTop} style={{ width: `${widthPercentage}%` }}>
             <span>★</span>
             <span>★</span>
             <span>★</span>
@@ -25,7 +26,7 @@ const Total = (props) => {
             <span>★</span>
           </div>
 
-          <div className="totalStars-bottom">
+          <div className={styles.totalStarsBottom}>
             <span>★</span>
             <span>★</span>
             <span>★</span>

@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import styles from '../dist/style.css';
 
 const Response = (props) => {
   const {
@@ -14,17 +15,17 @@ const Response = (props) => {
   const formattedDate = moment(timestamp).format('MMMM YYYY');
 
   return (
-    <div className="response-container">
-      <div className="img-response">
-        <img className="img-circle-response" src={`${responseAvatar}`} alt={`${responseUsername} User Profile`} />
+    <div className={styles.responseContainer}>
+      <div className={styles.imgResponse}>
+        <img className={styles.imgCircleResponse} src={`${responseAvatar}`} alt={`${responseUsername} User Profile`} />
       </div>
 
-      <div className="response-text-container">
-        <div className="response-username">
+      <div className={styles.responseTextContainer}>
+        <div className={styles.responseUsername}>
           {`Response from ${responseUsername}`}
         </div>
-        <div className="response-text">{responseText}</div>
-        <div className="response-created_at">{formattedDate}</div>
+        <div className={styles.responseText}>{responseText}</div>
+        <div className={styles.responseCreated_at}>{formattedDate}</div>
       </div>
     </div>
   );

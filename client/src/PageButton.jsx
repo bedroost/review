@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
+import styles from '../dist/style.css';
 
 const PageButton = (props) => {
   const {
@@ -13,14 +14,14 @@ const PageButton = (props) => {
   let activeClass;
 
   if (currentPage === pageValue) {
-    activeClass = "buttonDivNum activePage";
+    activeClass = styles.buttondivnumActivepage;
   } else {
-    activeClass = "buttonDivNum";
+    activeClass = styles.buttondivnum;
   }
 
   return (
-    <li className="pageList">
-      <button type="button" className="pagesButton numButton">
+    <li className={styles.pageList}>
+      <button type="button" className={[styles.pagesButton, styles.numButton].join(' ')}>
         <div className={activeClass} role="button" tabIndex="0" onClick={e => handlePageClick(e)}>{ pageValue }</div>
       </button>
     </li>

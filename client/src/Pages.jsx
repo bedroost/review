@@ -3,6 +3,7 @@ import React from 'react';
 import PageButton from './PageButton';
 import PageBack from './PageBack';
 import PageForward from './PageForward';
+import styles from '../dist/style.css';
 
 const Pages = (props) => {
   const {
@@ -29,7 +30,7 @@ const Pages = (props) => {
   if (n >= 6) {
     if (currentPage === 1) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage + 2} />
@@ -40,7 +41,7 @@ const Pages = (props) => {
       );
     } else if (currentPage === 2) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
@@ -52,7 +53,7 @@ const Pages = (props) => {
       );
     } else if (currentPage === 3) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 2} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
@@ -65,7 +66,7 @@ const Pages = (props) => {
       );
     } else if (currentPage === 4) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 3} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 2} />
@@ -79,7 +80,7 @@ const Pages = (props) => {
       );
     } else if (currentPage > 4 && currentPage < (n - 3)) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <li><div>...</div></li>
@@ -93,7 +94,7 @@ const Pages = (props) => {
       );
     } else if (currentPage === (n - 3)) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <li><div>...</div></li>
@@ -107,7 +108,7 @@ const Pages = (props) => {
       );
     } else if (currentPage === (n - 2)) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <li><div>...</div></li>
@@ -120,7 +121,7 @@ const Pages = (props) => {
       );
     } else if (currentPage === (n - 1)) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <li><div>...</div></li>
@@ -133,7 +134,7 @@ const Pages = (props) => {
     // final case: currentPage === n
     } else {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <li><div>...</div></li>
@@ -146,7 +147,7 @@ const Pages = (props) => {
   } else if (n === 5) {
     if (currentPage === 1) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={2} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={3} />
@@ -157,7 +158,7 @@ const Pages = (props) => {
       );
     } else if (currentPage === 2) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
@@ -169,7 +170,7 @@ const Pages = (props) => {
       );
     } else if (currentPage === 3) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 2} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 1} />
@@ -182,7 +183,7 @@ const Pages = (props) => {
       );
     } else if (currentPage === 4) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 3} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage - 2} />
@@ -195,7 +196,7 @@ const Pages = (props) => {
     // final case: currentPage === n
     } else {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <li><div>...</div></li>
@@ -255,7 +256,7 @@ const Pages = (props) => {
   } else if (n === 3) {
     if (currentPage === 1) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={2} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n} />
@@ -264,7 +265,7 @@ const Pages = (props) => {
       );
     } else if (currentPage === 2) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={currentPage} />
@@ -275,7 +276,7 @@ const Pages = (props) => {
     // final case where currentPage === n = 3
     } else {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n - 2} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={n - 1} />
@@ -286,7 +287,7 @@ const Pages = (props) => {
   } else if (n === 2) {
     if (currentPage === 1) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={2} />
           <PageForward handlePageForwardClick={handlePageForwardClick} />
@@ -295,7 +296,7 @@ const Pages = (props) => {
     // else currentPage === n
     } else {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className="styles.pagesList">
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={2} />
@@ -308,8 +309,8 @@ const Pages = (props) => {
   }
 
   return (
-    <div className="pagesContainer">
-      <nav className="pagesNav">
+    <div className={styles.pagesContainer}>
+      <nav className={styles.pagesNav}>
         <div>
           <ul>
             { pagesDisplayed }

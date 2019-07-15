@@ -1,12 +1,13 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import ReviewListItem from './ReviewListItem';
+import styles from '../dist/style.css';
 
 const ReviewList = (props) => {
   const { displayedReviews } = props;
 
   return (
-    <div className="reviewList-container">
+    <div className={styles.reviewListContainer}>
       {displayedReviews.map(displayedReview => (
         <ReviewListItem
           key={displayedReview._id}

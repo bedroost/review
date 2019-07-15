@@ -28,16 +28,16 @@ ul {
   margin-bottom: 20px;
 }
 
-.summary-container {
+.summaryContainer {
   display: flex;
   justify-content: space-between;
 }
 
-.total-container {
+.totalContainer {
   width: 60%;
 }
 
-.totalReviews-totalStars {
+.totalReviewsTotalStars {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -57,7 +57,7 @@ h2 {
   margin-bottom: 5px;
 }
 
-.totalStars-container {
+.totalStarsContainer {
   display: flex;
   justify-content: flex-start;
   padding-left: 10px;
@@ -73,7 +73,7 @@ h2 {
   padding: 0;
 }
 
-.totalStars .totalStars-top {
+.totalStars .totalStarsTop {
   color: #008489;
   padding: 0;
   position: absolute;
@@ -85,7 +85,7 @@ h2 {
   white-space: nowrap;
 }
 
-.totalStars .totalStars-bottom {
+.totalStars .totalStarsBottom {
   display: inline-block;
   z-index: 0;
   padding: 0;
@@ -95,20 +95,20 @@ h2 {
   margin: 2px;
 }
 
-.summary-border-bottom {
+.summaryBorderBottom {
   margin-top: 16px;
   margin-bottom: 16px;
   border: 0.5px solid #EBEBEB;
 }
 
 /* SEARCH */
-.search-container {
+.searchContainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.spyglass-searchInput-clearButton {
+.spyglassSearchinputClearButton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,7 +117,7 @@ h2 {
   position: relative;
 }
 
-.spyglass-searchInput-clearButton:focus-within {
+.spyglassSearchinputClearButton:focus-within {
 	border: 1px solid #008489;
 }
 
@@ -199,7 +199,7 @@ input[type=text] {
   max-width: 100%;
 }
 
-.ratings-container {
+.ratingsContainer {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -215,13 +215,13 @@ input[type=text] {
   padding-left: 8px;
 }
 
-.category-stars {
+.categoryStars {
   display: flex;
   justify-content: space-between;
   margin-bottom: 12px;
 }
 
-.stars-container {
+.starsContainer {
   display: flex;
   justify-content: flex-end;
   width: 50%;
@@ -236,7 +236,7 @@ input[type=text] {
   padding: 0;
 }
 
-.stars .stars-top {
+.stars .starsTop {
   color: #008489;
   padding: 0;
   position: absolute;
@@ -248,7 +248,7 @@ input[type=text] {
   white-space: nowrap;
 }
 
-.stars .stars-bottom {
+.stars .starsBottom {
   display: inline-block;
   z-index: 0;
   padding: 0;
@@ -259,7 +259,7 @@ input[type=text] {
 }
 
 /* SEARCH RESULTS BAR */
-.searchResults-showAllReviews {
+.searchresultsShowallreviews {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
@@ -290,13 +290,13 @@ input[type=text] {
 }
 
 /* REVIEW LIST */
-.reviewList-container {
+.reviewListContainer {
   margin-top: 16px;
   width: 100%;
 }
 
 /* REVIEW */
-.review-container {
+.reviewContainer {
   max-width: 100%;
 }
 
@@ -305,34 +305,34 @@ input[type=text] {
   justify-content: left;
 }
 
-.img-circle-review {
+.imgCircleReview {
   border-radius: 50%;
   max-width: 48px;
   max-height: 48px;
 }
 
-.username-date {
+.usernameDate {
   margin-left: 16px;
   padding-bottom: 5px;
 }
 
-.review-username {
+.reviewUsername {
   font-weight: bold;
 }
 
-.review-created_at {
+.reviewCreated_at {
   font-size: 14px;
 }
 
-.text-container {
+.textContainer {
   margin-top: 16px;
 }
 
-.review-text {
+.reviewText {
   -webkit-font-smoothing: antialiased;
 }
 
-.read-more-button {
+.readMoreButton {
   color: #008489;
   text-decoration: none;
   font: inherit;
@@ -348,14 +348,14 @@ input[type=text] {
   text-align: left;
 }
 
-.review-border-bottom {
+.reviewBorderBottom {
   margin-top: 24px;
   margin-bottom: 24px;
   border: 0.5px solid #EBEBEB;
 }
 
 /* RESPONSE */
-.response-container {
+.responseContainer {
   display: flex;
   justify-content: left;
   align-items: flex-start;
@@ -363,23 +363,23 @@ input[type=text] {
   margin-left: 16px;
 }
 
-.img-response {
+.imgResponse {
   margin-right: 16px;
 }
 
-.img-circle-response {
+.imgCircleResponse {
   border-radius: 50%;
   max-width: 40px;
   max-height: 40px;
 }
 
-.response-username {
+.responseUsername {
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 2px;
 }
 
-.response-created_at {
+.responseCreated_at {
   font-size: 14px;
   color: #767676;
   margin-top: 12px;
@@ -421,6 +421,23 @@ input[type=text] {
   -moz-user-select: auto;
   -ms-user-select: auto;
   user-select: auto;
+}
+
+.pagesButton .navButton:hover {
+  color: #008489;
+  text-decoration: none;
+  font: inherit;
+  background: transparent;
+  border: 0px;
+  cursor: pointer;
+  margin: 0px;
+  padding-left: 7px;
+  padding-right: 7px;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  text-decoration: none;
 }
 
 .pageList {
@@ -465,8 +482,31 @@ input[type=text] {
   box-shadow: none;
 }
 
-.activePage {
+.buttondivnumActivepage {
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #ffffff;
   background-color: #008489;
   border: 1px solid #008489;
+  outline: none;
+}
+
+.buttondivnum {
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
 }

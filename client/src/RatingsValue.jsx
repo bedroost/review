@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../dist/style.css';
 
 const RatingsValue = (props) => {
   const {
@@ -8,15 +9,15 @@ const RatingsValue = (props) => {
   const widthPercentage = (value / 5) * 100;
 
   return (
-    <div className="category-stars">
+    <div className={styles.categoryStars}>
 
-      <div className="category">
+      <div className={styles.category}>
         <span>Value</span>
       </div>
 
-      <div className="stars-container">
-        <div className="stars">
-          <div className="stars-top" style={{ width: `${widthPercentage}%` }}>
+      <div className={styles.starsContainer}>
+        <div className={styles.stars}>
+          <div className={styles.starsTop} style={{ width: `${widthPercentage}%` }}>
             <span>★</span>
             <span>★</span>
             <span>★</span>
@@ -24,7 +25,7 @@ const RatingsValue = (props) => {
             <span>★</span>
           </div>
 
-          <div className="stars-bottom">
+          <div className={styles.starsBottom}>
             <span>★</span>
             <span>★</span>
             <span>★</span>

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../dist/style.css';
 
 const Search = (props) => {
   const {
@@ -9,15 +10,15 @@ const Search = (props) => {
   } = props;
 
   return (
-    <div className="spyglass-searchInput-clearButton">
+    <div className={styles.spyglassSearchinputClearButton}>
 
-      <div className="spyglass">
+      <div className={styles.spyglass}>
         <i className="material-icons">search</i>
       </div>
 
-      <div className="searchInput">
+      <div className={styles.searchInput}>
         <input
-          className="searchInputField"
+          className={styles.searchInputField}
           type="text"
           id="name"
           placeholder="Search reviews"
@@ -27,8 +28,8 @@ const Search = (props) => {
         />
         {search !== null
           && (
-            <div className="clearDiv">
-              <button type="button" className="clearButton" onClick={() => handleBackToAllReviews()}>
+            <div className={styles.clearDiv}>
+              <button type="button" className={styles.clearButton} onClick={() => handleBackToAllReviews()}>
                 <div>✕</div>
               </button>
             </div>

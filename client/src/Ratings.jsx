@@ -2,6 +2,7 @@
 import React from 'react';
 import RatingsWellLeft from './RatingsWellLeft';
 import RatingsWellRight from './RatingsWellRight';
+import styles from '../dist/style.css';
 
 const Ratings = (props) => {
   const {
@@ -11,9 +12,9 @@ const Ratings = (props) => {
   } = props;
 
   return (
-    <div className="ratings-container">
+    <div className={styles.ratingsContainer}>
 
-      <div id="left" className="well">
+      <div id={styles.left} className={styles.well}>
         <RatingsWellLeft
           accuracy={accuracy}
           communication={communication}
@@ -21,7 +22,7 @@ const Ratings = (props) => {
         />
       </div>
 
-      <div id="right" className="well">
+      <div id={styles.right} className={styles.well}>
         <RatingsWellRight
           location={location}
           check_in={check_in}

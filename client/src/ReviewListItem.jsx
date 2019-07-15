@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import Response from './Response';
+import styles from '../dist/style.css';
 
 class ReviewListItem extends React.Component {
   constructor(props) {
@@ -51,7 +52,7 @@ class ReviewListItem extends React.Component {
       reviewText = (
         <div>
           {`${first50Words}...`}
-          <button type="button" className="read-more-button" onClick={() => this.handleClickReadMore()}>Read more</button>
+          <button type="button" className={styles.readMoreButton} onClick={() => this.handleClickReadMore()}>Read more</button>
         </div>
       );
     } else {
@@ -59,25 +60,25 @@ class ReviewListItem extends React.Component {
     }
 
     return (
-      <div className="review-container">
+      <div className={styles.reviewContainer}>
 
-        <div className="profile">
+        <div className={styles.profile}>
 
           <div>
-            <img className="img-circle-review" src={avatar} alt={`${username} User Profile`} />
+            <img className={styles.imgCircleReview} src={avatar} alt={`${username} User Profile`} />
           </div>
 
-          <div className="username-date">
-            <div className="review-username">{username}</div>
-            <div className="review-created_at">
+          <div className={styles.usernameDate}>
+            <div className={styles.reviewUsername}>{username}</div>
+            <div className={styles.reviewCreated_at}>
               <span>{formattedDate}</span>
             </div>
           </div>
 
         </div>
 
-        <div className="text-container">
-          <div className="review-text">
+        <div className={styles.textContainer}>
+          <div className={styles.reviewText}>
             {completeReviewText ? text : reviewText}
           </div>
         </div>
@@ -95,7 +96,7 @@ class ReviewListItem extends React.Component {
           }
         </div>
 
-        <div className="review-border-bottom" />
+        <div className={styles.reviewBorderBottom} />
 
       </div>
     );

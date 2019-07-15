@@ -139,14 +139,14 @@ class App extends React.Component {
     } = this.state;
 
     return (
-      <div className="reviewApp">
+      <div className={styles.reviewApp}>
 
-        <div className="summary">
-          <div className="summary-container">
-            <div className="total-container">
+        <div className={styles.summary}>
+          <div className={styles.summaryContainer}>
+            <div className={styles.totalContainer}>
               <Total totalReviews={totalReviews} ratings={ratings} />
             </div>
-            <div className="search-container">
+            <div className={styles.searchContainer}>
               <Search
                 handleSearchInput={this.handleSearchInput}
                 handleEnterPress={this.handleEnterPress}
@@ -157,9 +157,9 @@ class App extends React.Component {
           </div>
         </div>
 
-        <div className="summary-border-bottom" />
+        <div className={styles.summaryBorderBottom} />
 
-        <div className="details">
+        <div className={styles.details}>
           {
             allSearchedReviews
               ? (

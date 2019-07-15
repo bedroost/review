@@ -20,11 +20,11 @@ describe('<App /> rendering', () => {
   });
 
   it('should render <Total /> component', () => {
-    expect(wrapper.find('.total-container').length).toEqual(1);
+    expect(wrapper.find('.totalContainer').length).toEqual(1);
   });
 
   it('should render <Search /> component', () => {
-    expect(wrapper.find('.search-container').length).toEqual(1);
+    expect(wrapper.find('.searchContainer').length).toEqual(1);
   });
 
   it('should render <Ratings /> and <ReviewList /> component', () => {

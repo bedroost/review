@@ -1,6 +1,7 @@
 /* eslint-disable quotes */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
+import styles from '../dist/style.css';
 
 const SearchResults = (props) => {
   const {
@@ -11,16 +12,16 @@ const SearchResults = (props) => {
 
   const numGuests = allSearchedReviews.length;
   const searchSuccess = (
-    <div className="searchResults">
+    <div className={styles.searchResults}>
       {`${numGuests} guests have mentioned "`}
-      <span className="searchTerm">{search}</span>
+      <span className={styles.searchTerm}>{search}</span>
       {`"`}
     </div>
   );
   const searchFail = (
-    <div className="searchResults">
+    <div className={styles.searchResults}>
       {`None of our guests have mentioned "`}
-      <span className="searchTerm">{search}</span>
+      <span className={styles.searchTerm}>{search}</span>
       {`"`}
     </div>
   );
@@ -28,12 +29,12 @@ const SearchResults = (props) => {
   return (
     <div>
 
-      <div className="searchResults-showAllReviews">
+      <div className={styles.searchresultsShowallreviews}>
         { allSearchedReviews ? searchSuccess : searchFail }
-        <div className="showAllReviews">
+        <div className={styles.showAllReviews}>
           <button
             type="button"
-            className="showAllReviewsButton"
+            className={styles.showAllReviewsButton}
             onClick={() => handleBackToAllReviews()}
           >
           Back to all reviews
@@ -41,7 +42,7 @@ const SearchResults = (props) => {
         </div>
       </div>
 
-      <div className="summary-border-bottom" />
+      <div className={styles.summaryBorderBottom} />
     </div>
   );
 };
