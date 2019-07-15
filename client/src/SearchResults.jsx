@@ -10,16 +10,26 @@ const SearchResults = (props) => {
   } = props;
 
   const numGuests = allSearchedReviews.length;
+  const searchSuccess = (
+    <div className="searchResults">
+      {`${numGuests} guests have mentioned "`}
+      <span className="searchTerm">{search}</span>
+      {`"`}
+    </div>
+  );
+  const searchFail = (
+    <div className="searchResults">
+      {`None of our guests have mentioned "`}
+      <span className="searchTerm">{search}</span>
+      {`"`}
+    </div>
+  );
 
   return (
     <div>
 
       <div className="searchResults-showAllReviews">
-        <div className="searchResults">
-          {`${numGuests} guests have mentioned "`}
-          <span className="searchTerm">{search}</span>
-          {`"`}
-        </div>
+        { allSearchedReviews ? searchSuccess : searchFail }
         <div className="showAllReviews">
           <button
             type="button"
