@@ -28,6 +28,7 @@ class App extends React.Component {
     this.handleSearchInput = this.handleSearchInput.bind(this);
     this.handleEnterPress = this.handleEnterPress.bind(this);
     this.handleBackToAllReviews = this.handleBackToAllReviews.bind(this);
+    this.switchFromSearchedToAll = this.switchFromSearchedToAll.bind(this);
   }
 
   componentDidMount() {
@@ -52,7 +53,7 @@ class App extends React.Component {
   }
 
   sliceReviews() {
-    if (this.state.allSearchedReviews.length > 0) {
+    if (this.state.allSearchedReviews) {
       this.setState({
         displayedReviews: this.state.allSearchedReviews.slice(((this.state.currentPage - 1) * 7), (this.state.currentPage * 7)),
       });
@@ -66,6 +67,12 @@ class App extends React.Component {
   switchFromAllToSearched() {
     this.setState({
       displayedReviews: this.state.allSearchedReviews.slice(0, 7),
+    });
+  }
+
+  switchFromSearchedToAll() {
+    this.setState({
+      displayedReviews: this.state.allReviews.slice(0, 7),
     });
   }
 
@@ -106,6 +113,7 @@ class App extends React.Component {
       });
       this.setState({
         allSearchedReviews: searchedReviews,
+        currentPage: 1,
       }, () => this.switchFromAllToSearched());
     }
   }
@@ -115,7 +123,8 @@ class App extends React.Component {
       displayedReviews: this.state.allReviews.slice(0, 7),
       allSearchedReviews: null,
       search: null,
-    });
+      currentPage: 1,
+    }, () => this.switchFromSearchedToAll());
   }
 
   render() {
