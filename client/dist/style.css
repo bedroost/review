@@ -34,7 +34,7 @@ ul {
 }
 
 .total-container {
-  width: 70%;
+  width: 60%;
 }
 
 .totalReviews-totalStars {
@@ -112,8 +112,15 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0.5px solid #EBEBEB;
   border-radius: 3px;
+}
+
+.noGreen {
+  border: 0.5px solid #EBEBEB;
+}
+
+.withGreen {
+  border: 0.5px solid #008489;
 }
 
 .spyglass {
@@ -149,9 +156,9 @@ input[type=text] {
   background-color: transparent;
 }
 
-input[type=text]:focus {
+.spyglass-searchInput:focus {
   /* background: #fff; */
-	/* border: 1px solid #008489; */
+	border: 1px solid #008489;
   /* outline: none; */
 }
 

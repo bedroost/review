@@ -17,7 +17,7 @@ class App extends React.Component {
       displayedReviews: [],
       currentPage: 1,
       ratings: {},
-      search: '',
+      search: null,
     };
     this.getData = this.getData.bind(this);
     this.sliceReviews = this.sliceReviews.bind(this);
@@ -114,7 +114,7 @@ class App extends React.Component {
     this.setState({
       displayedReviews: this.state.allReviews.slice(0, 7),
       allSearchedReviews: null,
-      search: '',
+      search: null,
     });
   }
 

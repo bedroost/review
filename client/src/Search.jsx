@@ -7,8 +7,16 @@ const Search = (props) => {
     search,
   } = props;
 
+  // conditionally render green outline if text is present in input field
+  let searchOutline;
+  if (!search) {
+    searchOutline = 'spyglass-searchInput noGreen';
+  } else {
+    searchOutline = 'spyglass-searchInput withGreen';
+  }
+
   return (
-    <div className="spyglass-searchInput">
+    <div className={`${searchOutline}`}>
 
       <div className="spyglass">
         <i className="material-icons">search</i>
