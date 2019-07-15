@@ -7,18 +7,6 @@ const Search = (props) => {
     search,
   } = props;
 
-  // conditionally render if text is present in input field
-  // 1. green outline
-  // 2. clear text button
-  let searchOutline;
-  let clearButton;
-  // if (!search) {
-  //   searchOutline = 'spyglass-searchInput noGreen';
-  // } else {
-  //   searchOutline = 'spyglass-searchInput withGreen';
-  //   clearButton = <button>X</button>
-  // }
-
   return (
     <div className="spyglass-searchInput">
 
@@ -35,7 +23,11 @@ const Search = (props) => {
           onChange={e => handleSearchInput(e)}
           onKeyPress={e => handleEnterPress(e)}
         />
-        <div>{clearButton}</div>
+        <div className="clearDiv">
+          <button type="button" className="clearButton">
+            <div>X</div>
+          </button>
+        </div>
       </div>
 
     </div>

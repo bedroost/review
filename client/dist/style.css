@@ -108,27 +108,13 @@ h2 {
   justify-content: center;
 }
 
-/* .spyglass-searchInput {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 3px;
-}
-
-.noGreen {
-  border: 0.5px solid #EBEBEB;
-}
-
-.withGreen {
-  border: 0.5px solid #008489;
-} */
-
 .spyglass-searchInput {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 3px;
   border: 0.5px solid #EBEBEB;
+  position: relative;
 }
 
 .spyglass-searchInput:focus-within {
@@ -144,6 +130,8 @@ h2 {
 .searchInput {
   background: transparent;
   border: none;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .material-icons {
@@ -166,6 +154,63 @@ input[type=text] {
   border: none;
   outline: none;
   background-color: transparent;
+}
+
+.clearDiv{
+  margin: 0 auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: inherit;
+  padding: 6px;
+  opacity: 0.5;
+}
+
+.clearButton {
+  visibility: hidden;
+  background: transparent;
+  font: inherit;
+  border: 0px;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  text-align: left;
+}
+
+.clearButton:hover {
+  text-decoration: none;
+}
+
+.spyglass-searchInput:focus-within .clearButton {
+  visibility: visible;
+}
+
+/* CLEAR BUTTON, X SHAPE */
+.close {
+  position: relative;
+  display: inline-block;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.close:before, .close:after {
+  position: relative;
+  left: 8px;
+  content: ' ';
+  height: 20px;
+  width: 1px;
+  background-color: #484848;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
 }
 
 /* RATINGS */
