@@ -4,6 +4,7 @@ const Search = (props) => {
   const {
     handleSearchInput,
     handleEnterPress,
+    search,
   } = props;
 
   return (
@@ -18,9 +19,10 @@ const Search = (props) => {
           type="text"
           id="name"
           placeholder="Search reviews"
+          value={search}
           onChange={e => handleSearchInput(e)}
           onKeyPress={e => handleEnterPress(e)}
-      />
+        />
       </div>
 
     </div>

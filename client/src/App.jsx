@@ -137,7 +137,7 @@ class App extends React.Component {
               <Total totalReviews={totalReviews} ratings={ratings} />
             </div>
             <div className="search-container">
-              <Search handleSearchInput={this.handleSearchInput} handleEnterPress={this.handleEnterPress} />
+              <Search handleSearchInput={this.handleSearchInput} handleEnterPress={this.handleEnterPress} search={search} />
             </div>
           </div>
         </div>
