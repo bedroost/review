@@ -7,10 +7,10 @@ body {
   line-height: 1.375em;
   color: #484848;
   -webkit-font-smoothing: antialiased;
-  width: 594px;
-  max-width: 648px;
-  margin-left: 24px;
-  margin-right: 24px;
+  /* width: 594px; */
+  /* max-width: 648px; */
+  /* margin-left: 24px; */
+  /* margin-right: 24px; */
 }
 
 button:hover {
