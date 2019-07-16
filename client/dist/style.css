@@ -1,4 +1,4 @@
-body {
+.reviewApp {
   margin: 0px;
   word-wrap: break-word;
   font-family: Circular, -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
@@ -7,10 +7,18 @@ body {
   line-height: 1.375em;
   color: #484848;
   -webkit-font-smoothing: antialiased;
-  /* width: 594px; */
-  /* max-width: 648px; */
-  /* margin-left: 24px; */
-  /* margin-right: 24px; */
+  width: 594px;
+  max-width: 648px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: inherit;
+  line-height: inherit;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 button:hover {
@@ -21,8 +29,7 @@ ul {
   padding-left: 0px;
 }
 
-/* TOTAL */
-
+/* SUMMARY */
 .summary {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -33,6 +40,13 @@ ul {
   justify-content: space-between;
 }
 
+.summaryBorderBottom {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border: 0.5px solid #EBEBEB;
+}
+
+/* TOTAL */
 .totalContainer {
   width: 60%;
 }
@@ -47,14 +61,6 @@ ul {
   font-size: 24px;
   font-weight: 725;
   line-height: 1.25em;
-}
-
-h2 {
-  font-size: 1em;
-  font-weight: inherit;
-  line-height: inherit;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 
 .totalStarsContainer {
@@ -93,12 +99,6 @@ h2 {
 
 .totalStars span {
   margin: 2px;
-}
-
-.summaryBorderBottom {
-  margin-top: 16px;
-  margin-bottom: 16px;
-  border: 0.5px solid #EBEBEB;
 }
 
 /* SEARCH */
