@@ -5,13 +5,15 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const port = 3004;
+const cors = require('cors');
 const db = require('./db/index');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use('/rooms/:listingid', express.static(path.join(__dirname, '../client/dist')));
+app.use(cors());
 
-app.get('/api/:listingid/reviews', (req, res) => {
+app.get('/api/:listingid/reviews', cors(), (req, res) => {
   console.log('req.params: ', req.params);
   console.log('req.params.listingid', req.params.listingid);
 
