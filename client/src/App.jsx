@@ -37,7 +37,7 @@ class App extends React.Component {
   }
 
   getData() {
-    const listingId = window.location.href.split('/').pop();
+    const listingId = window.location.href.split('/')[4];
     axios.get(`/api/${listingId}/reviews`)
       .then((res) => {
         // console.log('axios res.data[0]', res.data[0]);

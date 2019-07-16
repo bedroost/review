@@ -9,18 +9,7 @@ const db = require('./db/index');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use('/rooms', express.static(path.join(__dirname, '../client/dist')));
-
-app.get('/rooms/:listingid', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist/index.html'), (err) => {
-    if (err) {
-      console.log(err);
-      res.sendStatus(500);
-    } else {
-      console.log('Sent: index.html');
-    }
-  });
-});
+app.use('/rooms/:listingid', express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/api/:listingid/reviews', (req, res) => {
   console.log('req.params: ', req.params);
