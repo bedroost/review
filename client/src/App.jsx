@@ -110,13 +110,23 @@ class App extends React.Component {
     if (e.key === 'Enter' && this.state.search) {
       const search = this.state.search;
       const allReviews = this.state.allReviews;
-      const searchedReviews = allReviews.filter((review) => {
-        return review.text.toLowerCase().includes(search.toLowerCase());
-      });
-      this.setState({
-        allSearchedReviews: searchedReviews,
-        currentPage: 1,
-      }, () => this.switchFromAllToSearched());
+
+      // if true that search term contains non-space characters, setstate to searchedReviews array
+      if (/\S/.test(search)) {
+        const searchedReviews = allReviews.filter((review) => {
+          return review.text.toLowerCase().includes(search.toLowerCase());
+        });
+        this.setState({
+          allSearchedReviews: searchedReviews,
+          currentPage: 1,
+        }, () => this.switchFromAllToSearched());
+      // else search term contains only space, setstate to empty array
+      } else {
+        this.setState({
+          allSearchedReviews: [],
+          currentPage: 1,
+        }, () => this.switchFromAllToSearched());
+      }
     }
   }
 
