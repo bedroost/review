@@ -209,7 +209,7 @@ const Pages = (props) => {
   } else if (n === 4) {
     if (currentPage === 1) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={2} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={3} />
@@ -220,7 +220,7 @@ const Pages = (props) => {
       );
     } else if (currentPage === 2) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={2} />
@@ -232,7 +232,7 @@ const Pages = (props) => {
       );
     } else if (currentPage === 3) {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={2} />
@@ -244,7 +244,7 @@ const Pages = (props) => {
     // final case: currentPage === n
     } else {
       pagesDisplayed = (
-        <div className="pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={2} />
@@ -296,7 +296,7 @@ const Pages = (props) => {
     // else currentPage === n
     } else {
       pagesDisplayed = (
-        <div className="styles.pagesList">
+        <div className={styles.pagesList}>
           <PageBack handlePageBackClick={handlePageBackClick} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={1} />
           <PageButton currentPage={currentPage} handlePageClick={handlePageClick} pageValue={2} />
