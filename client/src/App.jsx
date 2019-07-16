@@ -107,7 +107,7 @@ class App extends React.Component {
   }
 
   handleEnterPress(e) {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && this.state.search) {
       const search = this.state.search;
       const allReviews = this.state.allReviews;
       const searchedReviews = allReviews.filter((review) => {
