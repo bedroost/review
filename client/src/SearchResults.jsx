@@ -30,7 +30,7 @@ const SearchResults = (props) => {
     <div>
 
       <div className={styles.searchresultsShowallreviews}>
-        { allSearchedReviews ? searchSuccess : searchFail }
+        { allSearchedReviews.length > 0 ? searchSuccess : searchFail }
         <div className={styles.showAllReviews}>
           <button
             type="button"
