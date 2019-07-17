@@ -41,6 +41,8 @@ class App extends React.Component {
     // const listingId = window.location.href.split('/')[4];
     // axios.get(`http://localhost:${port}/api/${listingId}/reviews`)
     const listingId = window.location.href.split('/')[4];
+    console.log('window.location.href: ', window.location.href);
+    console.log('listingId: ', listingId);
     axios.get(`/api/${listingId}/reviews`)
       .then((res) => {
         // console.log('axios res.data[0]', res.data[0]);
