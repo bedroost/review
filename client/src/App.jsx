@@ -37,9 +37,11 @@ class App extends React.Component {
   }
 
   getData() {
-    const port = 3004;
+    // const port = 3004;
+    // const listingId = window.location.href.split('/')[4];
+    // axios.get(`http://localhost:${port}/api/${listingId}/reviews`)
     const listingId = window.location.href.split('/')[4];
-    axios.get(`http://localhost:${port}/api/${listingId}/reviews`)
+    axios.get(`/api/${listingId}/reviews`)
       .then((res) => {
         // console.log('axios res.data[0]', res.data[0]);
         this.setState({
