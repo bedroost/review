@@ -9,7 +9,8 @@
     "coverage": "jest --collect-coverage",
     "build": "webpack",
     "start": "nodemon server/index.js",
-    "seed": "node server/db/seed.js"
+    "seed": "node server/db/seed.js",
+    "upload": "node s3_upload.js bedroost-review-static client/dist/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "aws-sdk": "^2.494.0",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
