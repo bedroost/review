@@ -111,6 +111,8 @@ for (let i = 0; i < 100; i += 1) {
       console.log(err);
     } else {
       console.log(`newListing ${i} was saved.`);
+      // console.log(db.db);
+      db.db.close();
     }
   });
 }
