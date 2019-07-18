@@ -10,7 +10,8 @@
     "build": "webpack",
     "start": "nodemon server/index.js",
     "seed": "node server/db/seed.js",
-    "upload": "node s3_upload.js bedroost-review-static client/dist/bundle.js"
+    "upload": "node s3_upload.js bedroost-review-static client/dist/bundle.js",
+    "docker-start": "npm run seed && npm run start"
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,7 @@
     "moment": "^2.24.0",
     "mongoose": "^5.6.3",
     "morgan": "^1.9.1",
+    "nodemon": "^1.19.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }
