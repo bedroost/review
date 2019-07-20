@@ -89,7 +89,11 @@ class App extends React.Component {
       currentPage: clickedPage,
     }, () => this.sliceReviews());
     const element = document.getElementById('scrollTarget');
-    element.scrollIntoView({behavior: 'smooth'});
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+      inline: 'nearest',
+    });
   }
 
   handlePageBackClick() {
@@ -98,7 +102,11 @@ class App extends React.Component {
       currentPage: previousPage,
     }, () => this.sliceReviews());
     const element = document.getElementById('scrollTarget');
-    element.scrollIntoView({behavior: 'smooth'});
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+      inline: 'nearest',
+    });
   }
 
   handlePageForwardClick() {
@@ -107,7 +115,11 @@ class App extends React.Component {
       currentPage: nextPage,
     }, () => this.sliceReviews());
     const element = document.getElementById('scrollTarget');
-    element.scrollIntoView({behavior: 'smooth'});
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+      inline: 'nearest',
+    });
   }
 
   handleSearchInput(e) {
