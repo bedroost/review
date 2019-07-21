@@ -91,7 +91,7 @@ class App extends React.Component {
     const element = document.getElementById('scrollTarget');
     element.scrollIntoView({
       behavior: 'smooth',
-      block: 'end',
+      block: 'start',
       inline: 'nearest',
     });
   }
@@ -104,7 +104,7 @@ class App extends React.Component {
     const element = document.getElementById('scrollTarget');
     element.scrollIntoView({
       behavior: 'smooth',
-      block: 'end',
+      block: 'start',
       inline: 'nearest',
     });
   }
@@ -117,7 +117,7 @@ class App extends React.Component {
     const element = document.getElementById('scrollTarget');
     element.scrollIntoView({
       behavior: 'smooth',
-      block: 'end',
+      block: 'start',
       inline: 'nearest',
     });
   }
