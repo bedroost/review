@@ -11,15 +11,17 @@ const db = require('./db/index');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-// app.use('/rooms/:listingid', express.static(path.join(__dirname, '../client/dist')));
 app.use(cors());
-app.use('/rooms/:listingid', expressStaticGzip(path.join(__dirname, '../client/dist'), {
-  enableBrotli: true,
-  orderPreference: ['br', 'gz'],
-  setHeaders: (res) => {
-    res.setHeader('Cache-Control', 'public, max-age=31536000');
-  },
-}));
+app.use('/rooms/:listingid', express.static(path.join(__dirname, '../client/dist')));
+const pathtest = path.join(__dirname, '..', 'client', 'dist');
+console.log('pathtest: ', pathtest);
+// app.use('/rooms/:listingid', expressStaticGzip(path.join(__dirname, 'client', 'dist'), {
+//   enableBrotli: true,
+//   orderPreference: ['br', 'gz'],
+//   setHeaders: (res) => {
+//     res.setHeader('Cache-Control', 'public, max-age=31536000');
+//   },
+// }));
 
 app.get('/api/:listingid/reviews', cors(), (req, res) => {
   console.log('req.params: ', req.params);

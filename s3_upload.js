@@ -34,7 +34,7 @@ fileStream.on('error', err => (
   console.log('File Error', err)
 ));
 uploadParams.Body = fileStream;
-uploadParams.Key = path.basename(file);
+uploadParams.Key = `review/${path.basename(file)}`;
 
 // call S3 to retrieve upload file to specified bucket
 s3.upload(uploadParams, (err, data) => {
