@@ -7,7 +7,8 @@
   "scripts": {
     "test": "jest",
     "coverage": "jest --collect-coverage",
-    "build": "webpack",
+    "build:dev": "webpack -wd",
+    "build:prod": "webpack -p",
     "start": "nodemon server/index.js",
     "seed": "node server/db/seed.js",
     "upload": "node s3_upload.js bedroost-review-static client/dist/bundle.js",
