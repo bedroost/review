@@ -88,6 +88,12 @@ class App extends React.Component {
     this.setState({
       currentPage: clickedPage,
     }, () => this.sliceReviews());
+    const element = document.getElementById('scrollTarget');
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
   }
 
   handlePageBackClick() {
@@ -95,6 +101,12 @@ class App extends React.Component {
     this.setState({
       currentPage: previousPage,
     }, () => this.sliceReviews());
+    const element = document.getElementById('scrollTarget');
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
   }
 
   handlePageForwardClick() {
@@ -102,6 +114,12 @@ class App extends React.Component {
     this.setState({
       currentPage: nextPage,
     }, () => this.sliceReviews());
+    const element = document.getElementById('scrollTarget');
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
   }
 
   handleSearchInput(e) {
@@ -173,7 +191,6 @@ class App extends React.Component {
         </div>
 
         <div className={styles.summaryBorderBottom} />
-
         <div className={styles.details}>
           {
             allSearchedReviews
@@ -186,6 +203,7 @@ class App extends React.Component {
               )
               : <Ratings ratings={ratings} />
           }
+          <div id="scrollTarget" />
           <ReviewList displayedReviews={displayedReviews} />
         </div>
 
