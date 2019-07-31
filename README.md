@@ -9,9 +9,6 @@
   - https://github.com/bedroost/booking
 
 ## Usage
-
-> Some usage instructions
-
 ### Installing Dependencies
 
 ```
