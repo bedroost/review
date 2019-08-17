@@ -1,10 +1,10 @@
 # Bedroost
 
-> Application to explore guest reviews for home-stay accommodations
+* Application to explore guest reviews for home-stay accommodations
 
 
 ## Demo
-![](https://gfycat.com/thornydisastrousislandcanary)
+![reviewsdemo](https://gfycat.com/thornydisastrousislandcanary.gif)
 
 ## Features
 * Displays summary of reviews and ratings for a given accomodation. View total number of reviews, ratings for 6 individual categories, and overall rating that is accurate to the average ratings of 6 given categories.
