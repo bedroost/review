@@ -4,7 +4,7 @@
 
 
 ## Demo
-![bedroost-review-demo](https://gph.is/g/Z7DDB0q)
+![bedroost-review-demo](https://media.giphy.com/media/JtGDkxXkOo3gMSrPLg/giphy.gif)
 
 ## Features
 * Displays summary of reviews and ratings for a given accomodation. View total number of reviews, ratings for 6 individual categories, and overall rating that is accurate to the average ratings of 6 given categories.
