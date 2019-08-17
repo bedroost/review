@@ -1,10 +1,10 @@
 # Bedroost
-
-* Application to explore guest reviews for home-stay accommodations
+* Application to explore ratings and reviews for home-stay accommodations
 
 
 ## Demo
 ![bedroost-review-demo](https://i.imgur.com/WNGqodN.gifv)
+
 
 ## Features
 * Displays summary of reviews and ratings for a given accomodation. View total number of reviews, ratings for 6 individual categories, and overall rating that is accurate to the average ratings of 6 given categories.
@@ -14,6 +14,7 @@
 * Users can paginate through the full list of reviews, 7 at a time, using navigation buttons at the base of the page.
 
 * Users can search reviews and paginate through results as well.
+
 
 ## Usage
 
@@ -33,6 +34,7 @@ npm run build
 # run the app!
 npm start
 ```
+
 
 ## Related Projects
 - https://github.com/bedroost/gallery
