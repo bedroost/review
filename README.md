@@ -4,7 +4,7 @@
 
 
 ## Demo
-![bedroost-review-demo](https://i.imgur.com/WNGqodNundefined.gif)
+![bedroost-review-demo](https://i.imgur.com/WNGqodN.gifv)
 
 ## Features
 * Displays summary of reviews and ratings for a given accomodation. View total number of reviews, ratings for 6 individual categories, and overall rating that is accurate to the average ratings of 6 given categories.
@@ -37,4 +37,4 @@ npm start
 ## Related Projects
 - https://github.com/bedroost/gallery
 - https://github.com/bedroost/booking
-- https://github.com/bedroost/booking
+- https://github.com/bedroost/description
