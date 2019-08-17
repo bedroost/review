@@ -31,7 +31,7 @@ npm run seed
 # build webpack bundle
 npm run build
 
-# run the app!
+# run the app
 npm start
 ```
 
