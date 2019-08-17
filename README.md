@@ -3,7 +3,7 @@
 
 
 ## Demo
-![bedroost-review-demo](https://i.imgur.com/WNGqodN.gifv)
+![bedroost-review-demo](https://i.imgur.com/WNGqodN.gif)
 
 
 ## Features
