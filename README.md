@@ -3,9 +3,8 @@
 
 
 ## Demo
-![bedroost-review-demo](https://i.imgur.com/Lcb7ZKp.gifv)
-<iframe src='https://gfycat.com/ifr/AppropriateAmazingCopperhead' frameborder='0' scrolling='no' allowfullscreen width='640' height='783'></iframe>
-![2014-10-22 11_35_09](https://cloud.githubusercontent.com/assets/39191/4741874/9890757a-5a1a-11e4-9a71-3f64bd66b7ab.gif)
+![bedroost-review-demo](https://thumbs.gfycat.com/AppropriateAmazingCopperhead-size_restricted.gif)
+
 
 
 ## Features
