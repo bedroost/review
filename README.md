@@ -4,7 +4,9 @@
 
 
 ## Demo
-![reviewsdemo](https://gfycat.com/thornydisastrousislandcanary.gif)
+![bedroost-review-demo](https://gfycat.com/thornydisastrousislandcanary.gif)
+
+<div><div style="left: 0px; width: 100%; height: 0px; position: relative; padding-bottom: 115.469%;"><video loop="" muted="" webkit-playsinline="" autoplay="" poster="https://thumbs.gfycat.com/ThornyDisastrousIslandcanary-mobile.jpg" style="top: 0px; left: 0px; width: 100%; height: 100%; position: absolute;">Your browser does not support HTML5 video.<source src="https://thumbs.gfycat.com/ThornyDisastrousIslandcanary-mobile.mp4" type="video/mp4"></video></div></div>
 
 ## Features
 * Displays summary of reviews and ratings for a given accomodation. View total number of reviews, ratings for 6 individual categories, and overall rating that is accurate to the average ratings of 6 given categories.
