@@ -4,7 +4,7 @@
 
 
 ## Demo
-![bedroost-review-demo](https://gfycat.com/amp/thornydisastrousislandcanary-bedroost-review-demo-gif)
+![bedroost-review-demo](https://imgur.com/Rqv6NYZ)
 
 ## Features
 * Displays summary of reviews and ratings for a given accomodation. View total number of reviews, ratings for 6 individual categories, and overall rating that is accurate to the average ratings of 6 given categories.
