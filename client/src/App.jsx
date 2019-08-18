@@ -48,7 +48,7 @@ class App extends React.Component {
         });
       })
       .catch((err) => {
-        console.log('axios error:', err);
+        console.log('axios error:', err.response);
       });
   }
 
