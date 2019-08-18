@@ -14,7 +14,6 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use('/rooms/:listingid', express.static(path.join(__dirname, '../client/dist')));
 const pathtest = path.join(__dirname, '..', 'client', 'dist');
-console.log('pathtest: ', pathtest);
 // app.use('/rooms/:listingid', expressStaticGzip(path.join(__dirname, 'client', 'dist'), {
 //   enableBrotli: true,
 //   orderPreference: ['br', 'gz'],
