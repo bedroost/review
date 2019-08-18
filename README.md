@@ -1,21 +1,20 @@
 # Bedroost
-* Application to explore ratings and reviews for home-stay accommodations
+Reviews and ratings microservice built for a home-sharing application
 
-
-## Demo
 ![bedroost-review-demo](https://thumbs.gfycat.com/AppropriateAmazingCopperhead-size_restricted.gif)
 
 
-
 ## Features
-* Displays summary of reviews and ratings for a given accomodation. View total number of reviews, ratings for 6 individual categories, and overall rating that is accurate to the average ratings of 6 given categories.
+* Displays overview of reviews and ratings for a given home-sharing accomodation. View total number of reviews, ratings for 6 individual categories, and an overall rating that is accurate to the average ratings of provided categories.
+* Each individual review includes profile picture, name, timestamp, and review content. Some reviews may include a host response. All guest reviews and host responses are displayed in descending chronological order. 
+* Users can paginate through the full list of reviews using navigation buttons at the base of the page.
+* Users can search reviews and paginate through search results as well.
 
-* Each individual review includes profile picture, name, timestamp, and text content. Some reviews may include a host response. All guest reviews and host responses are displayed in descending chronological order. 
-
-* Users can paginate through the full list of reviews, 7 at a time, using navigation buttons at the base of the page.
-
-* Users can search reviews and paginate through results as well.
-
+## Tech Stack
+* Frontend: JavaScript, React, Webpack
+* Backend: Node.js, Express
+* Database: MongoDB
+* Testing: Jest, Enzyme
 
 ## Usage
 
@@ -30,14 +29,13 @@ npm install
 npm run seed
 
 # build webpack bundle
-npm run build
+npm run build:prod
 
 # run the app
 npm start
 ```
 
-
 ## Related Projects
-- https://github.com/bedroost/gallery
-- https://github.com/bedroost/booking
-- https://github.com/bedroost/description
+* https://github.com/bedroost/gallery
+* https://github.com/bedroost/booking
+* https://github.com/bedroost/description
