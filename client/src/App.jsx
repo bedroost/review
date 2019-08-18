@@ -37,15 +37,9 @@ class App extends React.Component {
   }
 
   getData() {
-    // const port = 3004;
-    // const listingId = window.location.href.split('/')[4];
-    // axios.get(`http://localhost:${port}/api/${listingId}/reviews`)
     const listingId = window.location.href.split('/')[4];
-    console.log('window.location.href: ', window.location.href);
-    console.log('listingId: ', listingId);
     axios.get(`/api/${listingId}/reviews`)
       .then((res) => {
-        // console.log('axios res.data[0]', res.data[0]);
         this.setState({
           totalReviews: res.data[0].numReviews,
           allReviews: res.data[0].reviews,
@@ -54,7 +48,7 @@ class App extends React.Component {
         });
       })
       .catch((err) => {
-        console.log('axios error:', err);
+        console.log('axios error:', err.response);
       });
   }
 
@@ -83,7 +77,6 @@ class App extends React.Component {
   }
 
   handlePageClick(e) {
-    console.log(e.target.innerText);
     const clickedPage = Number(e.target.innerText);
     this.setState({
       currentPage: clickedPage,
