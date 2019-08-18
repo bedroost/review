@@ -24,8 +24,9 @@ coverage
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
 
-# Notes
+# Notes & Commands
 notes.txt
+dockerdeployimage.sh
 
 # Settings
 .vscode
