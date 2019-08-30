@@ -12,7 +12,7 @@ Reviews and ratings microservice built for a home-sharing application
 
 ## Tech Stack
 * Frontend: JavaScript, React, Webpack
-* Backend: Node.js, Express
+* Backend: Node.js, Express, Docker, AWS EC2
 * Database: MongoDB
 * Testing: Jest, Enzyme
 
