@@ -34,6 +34,15 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getData();
+    console.log(
+      `
+         *               ---------------------------------------------------------
+        ***             |         Thanks for visiting Bedroost Reviews!           |
+       *****  /) /)     | Check out features: 'Read more', search, and pagination |
+        ***  ( ^.^) ~~~ |                  ~ Cheers, Cassie ~                     |
+     ____|__ C(")(")__   ---------------------------------------------------------
+      `
+    );
   }
 
   getData() {
