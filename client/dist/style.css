@@ -38,14 +38,30 @@ ul {
 .summaryContainer {
   display: flex;
   justify-content: space-between;
-  /* flex-wrap: wrap; */
 }
 
 @media screen and (max-width: 540px) {
   .summaryContainer {
-    /* display: flex;
-    justify-content: space-between; */
     flex-wrap: wrap;
+  }
+
+  .searchContainer {
+    width: 260px;
+  }
+
+  .spyglassSearchinputClearButton {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  input#name {
+    width: 240px;
+  }
+
+  .searchInput {
+    display: flex;
+    width: 220px;
   }
 }
 
@@ -151,6 +167,7 @@ ul {
 }
 
 input[type=text] {
+  width: 100%;
   font-size: 14px;
   line-height: 22px;
   -webkit-appearance: none;
@@ -164,6 +181,7 @@ input[type=text] {
   border: none;
   outline: none;
   background-color: transparent;
+
 }
 
 .clearDiv{
