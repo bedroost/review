@@ -29,7 +29,7 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "aws-sdk": "^2.494.0",
+    "aws-sdk": "^2.814.0",
     "axios-mock-adapter": "^1.17.0",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
